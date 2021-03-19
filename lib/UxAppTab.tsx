@@ -1,23 +1,40 @@
 export interface AppTabItem {
   label: string;
+  element: () => HTMLElement;
+  selectedElement?: () => HTMLElement;
+  page?: any;
+}
+
+export interface AppTabItemInstans {
+  label: string;
   element: HTMLElement;
-  selectedElement?: HTMLElement;
+  selectedElement: HTMLElement;
+  page?: any;
 }
 
 export interface UxAppTabProps extends IProps {
   data: AppTabItem[];
-  onchange?: (num: number) => void;
+  onChange?: (num: number) => void;
 }
 
 export function UxAppTab({
   data,
-  onchange,
+  onChange,
   className,
   ...rest
 }: UxAppTabProps) {
   const state = {
     selectedNum: 0,
   };
+  const items = data.map((v: any) => {
+    const out = {
+      label: v.label,
+      element: v.element(),
+      selectedElement: v.selectedElement ? v.selectedElement() : v.element(),
+    };
+    return out;
+  }) as AppTabItemInstans[];
+
   const out = (
     <div
       class={[
@@ -26,16 +43,14 @@ export function UxAppTab({
       ]}
       {...rest}
     >
-      {data.map((item, i) => {
+      {items.map((item, i) => {
         [
           ["fill", "var(--app-tab)"],
           ["width", "24px"],
           ["height", "24px"],
         ].forEach((v) => {
           item.element.setAttribute(v[0], v[1]);
-          if (item.selectedElement) {
-            item.selectedElement.setAttribute(v[0], v[1]);
-          }
+          item.selectedElement.setAttribute(v[0], v[1]);
         });
 
         return (
@@ -49,15 +64,13 @@ export function UxAppTab({
             }}
             onclick={() => {
               state.selectedNum = i;
-              onchange && onchange(i);
+              onChange && onChange(i);
               aoife.next(out);
             }}
           >
             <div class="color:--app-tab place-self:center">
               {() =>
-                i === state.selectedNum
-                  ? item.selectedElement || item.element
-                  : item.element
+                i === state.selectedNum ? item.selectedElement : item.element
               }
             </div>
             <p class="fs:12px color:--app-tab">{item.label}</p>
