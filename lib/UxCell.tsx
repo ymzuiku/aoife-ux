@@ -2,7 +2,15 @@ export interface UxCellProps extends IProps {
   topCell?: boolean;
 }
 
-const cellBox = "cols:1fr|auto padding:10px|10px bg:--plan bb:--divide button";
+const cellBox = `
+cols:1fr|auto
+padding:10px|10px
+bg:--plan
+bb:--divide
+t:0.2s|all|--ease
+md:cursor:pointer
+:active:bg:--active
+`;
 
 export function UxCell({ topCell, className, children, ...rest }: UxCellProps) {
   return (

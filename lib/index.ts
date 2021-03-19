@@ -1,6 +1,7 @@
-import "./baseCss";
+export * from "./useBaseCss";
 export * from "./UxButton";
 export * from "./UxInput";
+export * from "./UxApp";
 export * from "./UxSelect";
 export * from "./UxSendCode";
 export * from "./UxItem";
@@ -10,3 +11,4 @@ export * from "./UxAlert";
 export * from "./UxRedBox";
 export * from "./UxLayout";
 export * from "./UxCell";
+export * from "./UxAppTab";

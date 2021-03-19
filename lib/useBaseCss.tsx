@@ -1,27 +1,5 @@
-const dark = `
---primary: #303139;
---front: #fff;
---plan: #1c1c1d;
---bg: #181818;
---weak: #939398;
---area: #E8E8EA;
---line: #28282a;
---active: #222223;
-`;
-
-const light = `
---primary: #467AFF;
---front: #000;
---plan: #fff;
---bg: #EFEFF4;
---weak: #939398;
---area: #E8E8EA;
---line: #e1e1e2;
---active: #e5e5e5;
-`;
-
-const baseFlavor = `
-<style>
+export function useBaseCss() {
+  const normal = `
 *,
 ::after,
 ::before {
@@ -267,6 +245,32 @@ textarea:focus:not(:focus-visible),
 video:focus:not(:focus-visible) {
   outline: 0;
 }
+`;
+
+  const dark = `
+--primary: #303139;
+--front: #fff;
+--plan: #1c1c1d;
+--bg: #181818;
+--weak: #939398;
+--area: #E8E8EA;
+--line: #28282a;
+--active: #222223;
+`;
+
+  const light = `
+--primary: #467AFF;
+--front: #000;
+--plan: #fff;
+--bg: #EFEFF4;
+--weak: #939398;
+--area: #E8E8EA;
+--line: #e9e9e9;
+--active: #e5e5e5;
+`;
+
+  const baseFlavor = `
+${normal}
 * {
   color: var(--front);
   box-sizing: border-box;
@@ -293,6 +297,9 @@ video:focus:not(:focus-visible) {
 }
 body {
   --divide: var(--px) solid var(--line);
+  padding:0px;
+  margin:0px;
+  height: 100vh;
 }
 @media (prefers-color-scheme:dark) {
   :root {
@@ -305,9 +312,14 @@ body {
 .dark {
   ${dark}
 }
-</style>
-<template flavor>
-  t: transition:$1;
+`;
+
+  const style = document.createElement("style");
+  style.textContent = baseFlavor;
+  document.head.append(style);
+
+  const flavor = `
+t: transition:$1;
   from: transform:$1;
   sans: font-family:--sans;
   serif: font-family:--serif;
@@ -352,11 +364,14 @@ body {
   bb: border-bottom:$1;
   b: border:$1;
   z: z-index:$1;
+  ox: overflow-x:$1;
+  oy: overflow-y:$1;
   radius: border-radius:$1;
-  button: t:0.2s|all|--ease md:cursor:pointer :active:bg:--active;
-</template>
 `;
 
-document.body.append(<div innerHTML={baseFlavor}></div>);
-
-export const a = 0;
+  const flavorEle = document.createElement("div");
+  flavorEle.style.display = "none";
+  flavorEle.setAttribute("flavor", "");
+  flavorEle.textContent = flavor;
+  document.body.append(flavorEle);
+}
