@@ -1,4 +1,3 @@
-export * from "./useBaseCss";
 export * from "./UxButton";
 export * from "./UxInput";
 export * from "./UxApp";
@@ -12,3 +11,16 @@ export * from "./UxRedBox";
 export * from "./UxLayout";
 export * from "./UxCell";
 export * from "./UxAppTab";
+export * from "./UxSwipe";
+
+import {
+  setMobileCss,
+  setKeyboardAutoHide,
+  setAutoScrollToFocusInput,
+} from "./device";
+import { useBaseCss } from "./useBaseCss";
+
+useBaseCss();
+setMobileCss();
+setKeyboardAutoHide();
+// setAutoScrollToFocusInput();

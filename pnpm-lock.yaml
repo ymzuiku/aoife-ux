@@ -2,15 +2,11 @@ dependencies:
   nano-storage: 1.0.2
   template-css: 1.5.6
 devDependencies:
-  aoife: 1.7.3
+  aoife: link:../../../../node_global/pnpm-global/node_modules/aoife
   tslib: 2.1.0
   typescript: 4.2.3
 lockfileVersion: 5.2
 packages:
-  /aoife/1.7.3:
-    dev: true
-    resolution:
-      integrity: sha512-JU2UqODVLW7zLUM35NfuIOFgbj/r/ParR693R923Ziq31E/esT9t97rQfpqWvbaB6FYsqx+d+6BxPhc5DLZBUA==
   /nano-storage/1.0.2:
     dev: false
     resolution:

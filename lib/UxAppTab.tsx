@@ -38,7 +38,7 @@ export function UxAppTab({
   const out = (
     <div
       class={[
-        "height:54px pb:env(safe-area-inset-bottom) bg:--plan w:100% bt:--divide col",
+        "pt:10px pb:--safe-bottom w:100% col bt:--divide bg:--plan",
         className,
       ]}
       {...rest}

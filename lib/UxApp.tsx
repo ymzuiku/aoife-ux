@@ -1,5 +1,5 @@
 import { UxAppTabProps, UxAppTab } from "./UxAppTab";
-import { getRender } from "./tools";
+import { getRender } from "./getRender";
 
 export interface UxAppProps extends UxAppTabProps {}
 
@@ -11,7 +11,6 @@ export function UxApp({ children, className, data }: UxAppProps) {
       childs[num] = await getRender(data[num].page);
       const last = page.children.item(num);
       if (last) {
-        console.log(childs[num]);
         last.replaceWith(childs[num]);
       }
     }
@@ -27,7 +26,7 @@ export function UxApp({ children, className, data }: UxAppProps) {
   }
 
   const page = (
-    <div class="overflow-y:auto overflowy-x:">
+    <div>
       {Array(data.length)
         .fill(0)
         .map(() => (
@@ -39,9 +38,11 @@ export function UxApp({ children, className, data }: UxAppProps) {
   changeDisplay(0);
 
   return (
-    <div class={["h:100% rows:1fr|auto", className]}>
+    <div>
       {page}
+      <div class="w:1px h:100px"></div>
       <UxAppTab
+        class="pos:fixed bottom:0px left:0px"
         data={data}
         onChange={(i) => {
           changeDisplay(i);
