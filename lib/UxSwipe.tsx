@@ -23,9 +23,9 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
   let len = children!.length;
   let lock = false;
   const out = (
-    <div class={`h:300px col w:${len}00% will-change:transform`}>
+    <div class={`h:300px col w:100% will-change:transform`}>
       {children!.map((v) => {
-        return <div class="w:100% h:100% touch-action：pan-x">page-{v}</div>;
+        return <div class="w:100% h:100%">{v}</div>;
       })}
     </div>
   ) as UxSwipeElement;
@@ -35,6 +35,13 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
   });
 
   out.addEventListener("touchstart", (e) => {
+    if (w < 0) {
+      const ele = out.children.item(0) as HTMLDivElement;
+      if (ele) {
+        // console.log(ele.offsetWidth, ele.clientWidth);
+        w = ele.offsetWidth;
+      }
+    }
     lock = false;
     t = Date.now();
     lastX = e.touches[0].clientX;
@@ -44,6 +51,7 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
   });
 
   out.addEventListener("touchmove", (e) => {
+    x = e.touches[0].clientX - lastX;
     if (lock) {
       if (x !== 0) {
         x = 0;
@@ -60,7 +68,9 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
       }
       return;
     }
-    x = e.touches[0].clientX - lastX;
+    if (x < 80 && x > -80) {
+      return;
+    }
     out.style.transform = `translateX(${num * w + x}px)`;
 
     if (onChange) {
@@ -137,17 +147,6 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
       }
     }
   };
-
-  aoife.waitAppend(out).then(() => {
-    if (w < 0) {
-      const ele = out.children.item(0) as HTMLDivElement;
-      if (ele) {
-        w = ele.clientWidth;
-
-        console.log(ele.clientWidth, w, "wwww");
-      }
-    }
-  });
 
   return out as UxSwipeElement;
 }
