@@ -2,13 +2,19 @@ export interface SwipeData {
   moveX: number;
   containerWidth: number;
   nowNum: number;
+  length: number;
+  kind: "touch" | "event";
 }
 
 export interface UxSwipeProps extends IProps {
   onChange?: (data: SwipeData) => any;
 }
 
-export function UxSwipe({ onChange, children }: UxSwipeProps) {
+export interface UxSwipeElement extends HTMLDivElement {
+  moveTo: (num: number) => void;
+}
+
+export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
   let lastX = 0;
   let x = 0;
   let w = -1;
@@ -22,7 +28,7 @@ export function UxSwipe({ onChange, children }: UxSwipeProps) {
         return <div class="w:100% h:100% touch-action：pan-x">page-{v}</div>;
       })}
     </div>
-  ) as HTMLElement;
+  ) as UxSwipeElement;
 
   window.addEventListener("scroll", () => {
     lock = true;
@@ -43,20 +49,28 @@ export function UxSwipe({ onChange, children }: UxSwipeProps) {
         x = 0;
         out.style.transform = `translateX(${num * w + x}px)`;
         if (onChange) {
-          onChange({ moveX: x, containerWidth: w, nowNum: num });
+          onChange({
+            moveX: x,
+            containerWidth: w,
+            nowNum: num,
+            length: len,
+            kind: "touch",
+          });
         }
       }
       return;
-    }
-    if (w < 0) {
-      const ele = e.target as HTMLDivElement;
-      w = ele.offsetWidth;
     }
     x = e.touches[0].clientX - lastX;
     out.style.transform = `translateX(${num * w + x}px)`;
 
     if (onChange) {
-      onChange({ moveX: x, containerWidth: w, nowNum: num });
+      onChange({
+        moveX: x,
+        containerWidth: w,
+        nowNum: num,
+        length: len,
+        kind: "touch",
+      });
     }
 
     e.stopPropagation();
@@ -80,6 +94,7 @@ export function UxSwipe({ onChange, children }: UxSwipeProps) {
     // const add = Math.round(x / w);
     e.stopPropagation();
     num += ~~(x / w) + add;
+    x = 0;
     if (num < -len + 1) {
       num = -len + 1;
     } else if (num > 0) {
@@ -92,9 +107,47 @@ export function UxSwipe({ onChange, children }: UxSwipeProps) {
     }, 30);
 
     if (onChange) {
-      onChange({ moveX: x, containerWidth: w, nowNum: num });
+      onChange({
+        moveX: x,
+        containerWidth: w,
+        nowNum: num,
+        length: len,
+        kind: "touch",
+      });
     }
   });
 
-  return out;
+  out.moveTo = (index: number) => {
+    if (document.contains(out)) {
+      num = index;
+
+      out.style.transition = "0.5s transform var(--ease)";
+      setTimeout(() => {
+        out.style.transform = `translateX(${num * w}px)`;
+      }, 30);
+
+      if (onChange) {
+        onChange({
+          moveX: x,
+          containerWidth: w,
+          nowNum: num,
+          length: len,
+          kind: "event",
+        });
+      }
+    }
+  };
+
+  aoife.waitAppend(out).then(() => {
+    if (w < 0) {
+      const ele = out.children.item(0) as HTMLDivElement;
+      if (ele) {
+        w = ele.clientWidth;
+
+        console.log(ele.clientWidth, w, "wwww");
+      }
+    }
+  });
+
+  return out as UxSwipeElement;
 }
