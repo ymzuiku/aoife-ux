@@ -274,7 +274,7 @@ video:focus:not(:focus-visible) {
 ${normal}
 :root {
   --safe-top: ${isNeedSafeTop ? 20 : 0}px;
-  --safe-bottom: ${isNeedSafeBottom ? 24 : 6}px;
+  --safe-bottom: ${isNeedSafeBottom ? 22 : 5}px;
 }
 * {
   color: var(--front);

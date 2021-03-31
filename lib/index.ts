@@ -13,14 +13,12 @@ export * from "./UxCell";
 export * from "./UxAppTab";
 export * from "./UxSwipe";
 
-import {
-  setMobileCss,
-  setKeyboardAutoHide,
-  setAutoScrollToFocusInput,
-} from "./device";
+import * as device from "./device";
 import { useBaseCss } from "./useBaseCss";
 
 useBaseCss();
-setMobileCss();
-setKeyboardAutoHide();
+device.setMobileCss();
+device.setKeyboardAutoHide();
+
+export { device };
 // setAutoScrollToFocusInput();

@@ -38,7 +38,7 @@ export function UxAppTab({
   const out = (
     <div
       class={[
-        "pt:10px pb:--safe-bottom w:100% col bt:--divide bg:--plan",
+        "pt:5px pb:--safe-bottom w:100% col bt:--divide bg:--plan",
         className,
       ]}
       {...rest}
@@ -46,8 +46,8 @@ export function UxAppTab({
       {items.map((item, i) => {
         [
           ["fill", "var(--app-tab)"],
-          ["width", "24px"],
-          ["height", "24px"],
+          ["width", "20px"],
+          ["height", "20px"],
         ].forEach((v) => {
           item.element.setAttribute(v[0], v[1]);
           item.selectedElement.setAttribute(v[0], v[1]);
@@ -73,7 +73,7 @@ export function UxAppTab({
                 i === state.selectedNum ? item.selectedElement : item.element
               }
             </div>
-            <p class="fs:12px color:--app-tab">{item.label}</p>
+            <p class="fs:10px color:--app-tab">{item.label}</p>
           </div>
         );
       })}
