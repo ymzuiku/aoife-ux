@@ -1,4 +1,5 @@
 dependencies:
+  flavorcss: 0.5.11
   nano-storage: 1.0.2
   template-css: 1.5.6
 devDependencies:
@@ -7,6 +8,10 @@ devDependencies:
   typescript: 4.2.3
 lockfileVersion: 5.2
 packages:
+  /flavorcss/0.5.11:
+    dev: false
+    resolution:
+      integrity: sha512-PlJPtHqzrwym0LE/W02muR9HS7OQEO8V0HWG4fPGUeoX0bbc/kQvCPcmxZ9E/HpEluoEZSR/qVTeTg4BrOVA1g==
   /nano-storage/1.0.2:
     dev: false
     resolution:
@@ -34,6 +39,7 @@ packages:
       integrity: sha512-qOcYwxaByStAWrBf4x0fibwZvMRG+r4cQoTjbPtUlrWjBHbmCAww1i448U0GJ+3cNNEtebDteo/cHOR3xJ4wEw==
 specifiers:
   aoife: ^1.7.3
+  flavorcss: ^0.5.11
   nano-storage: ^1.0.2
   template-css: ^1.5.6
   tslib: ^2.1.0

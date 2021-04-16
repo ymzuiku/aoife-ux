@@ -5,7 +5,7 @@ export const isPc = !isIOS && !isAndroid;
 export const isNeedSafeBottom = isIOS && window.screen.height >= 812;
 export const isNeedSafeTop = window.location.href.indexOf("native") > -1;
 
-export const setMobileCss = () => {
+export const setMobileNotScale = () => {
   if (isPc || (window as any).__setMobileCss) {
     return;
   }
@@ -77,10 +77,68 @@ export const setKeyboardAutoHide = () => {
   });
 };
 
-export const setAutoScrollToFocusInput = () => {
-  window.addEventListener("resize", () => {
-    if (document.activeElement && document.activeElement.tagName === "INPUT") {
-      document.activeElement.scrollIntoView();
-    }
-  });
-};
+// export const setAutoScrollToFocusInput = () => {
+//   window.addEventListener("resize", () => {
+//     if (document.activeElement && document.activeElement.tagName === "INPUT") {
+//       document.activeElement.scrollIntoView();
+//     }
+//   });
+// };
+
+// export const setCanScroll = (view?: any) => {
+//   if (!(window as any).__setCanScroll) {
+//     (window as any).__setCanScroll = true;
+//     // 阻止默认的处理方式(阻止下拉滑动的效果)
+//     document.addEventListener(
+//       "touchmove",
+//       function (e) {
+//         e.preventDefault();
+//       },
+//       { passive: true }
+//     );
+
+//     const styleEle = document.createElement("style");
+//     styleEle.textContent = `
+//   [can-scroll] {
+//     -webkit-overflow-scrolling: touch;
+//   }
+// `;
+//     document.body.appendChild(styleEle);
+//   }
+
+//   if (!view) {
+//     return;
+//   }
+
+//   // 确保滚动区域在最顶部和最底部时，touch不会让body滚动
+//   if (!view.__mobile_scroll) {
+//     view.__mobile_scroll = true;
+
+//     view.addEventListener("touchstart", () => {
+//       // 计算高度是否可以滚动
+//       view.__can_scroll = view.scrollHeight > view.clientHeight;
+//       if (view.__can_scroll) {
+//         const scrollTop: number = view.scrollTop;
+
+//         if (scrollTop === 0) {
+//           view.scrollTop = 1;
+//         } else if (scrollTop + view.offsetHeight === view.scrollHeight) {
+//           view.scrollTop = view.scrollHeight - view.offsetHeight - 1;
+//         }
+//       }
+//     });
+
+//     // body整个阻止了滚动，此时整个页面都不能滚动，在需要滚动对象中拦截冒泡才可滚动
+//     view.addEventListener(
+//       "touchmove",
+//       (e: Event) => {
+//         if (view.__can_scroll) {
+//           e.stopPropagation();
+//         } else {
+//           e.preventDefault();
+//         }
+//       },
+//       { passive: false }
+//     );
+//   }
+// };

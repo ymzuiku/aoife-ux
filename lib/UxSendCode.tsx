@@ -1,5 +1,5 @@
 import css from "template-css";
-import { UxInput } from "./UxInput";
+import { UxTipInput } from "./UxTipInput";
 import { NanoStorage } from "nano-storage";
 
 interface UxSendCodeProps extends IProps {
@@ -72,17 +72,17 @@ export function UxSendCode({
   }
 
   const out = (
-    <UxInput {...rest}>
+    <UxTipInput {...rest}>
       {children![0]}
       {button}
-    </UxInput>
+    </UxTipInput>
   ) as HTMLElement;
   return out;
 }
 
 css`
   .ux-send-code {
-    color: var(--primary-500);
+    color: var(--primary);
     font-weight: 500;
     margin: 6px;
     font-size: 16px;
@@ -95,11 +95,11 @@ css`
   .ux-send-code.js-loading {
     font-size: 20px;
     font-weight: 400;
-    color: var(--gray-500);
+    color: var(--line);
   }
   @media (pointer: fine) {
     .ux-send-code:hover {
-      background: var(--gray-200);
+      background: var(--line);
       border-radius: 4px;
     }
   }
