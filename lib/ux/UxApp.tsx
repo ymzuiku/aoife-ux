@@ -1,5 +1,5 @@
 import { UxAppTabProps, UxAppTab } from "./UxAppTab";
-import { getRender } from "./getRender";
+import { getRender } from "../getRender";
 
 export interface UxAppProps extends UxAppTabProps {}
 
