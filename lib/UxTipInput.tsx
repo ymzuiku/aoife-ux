@@ -1,12 +1,18 @@
 import css from "template-css";
 
+interface UxTipInputProps extends IProps {
+  right?: any;
+}
+
 export function UxTipInput({
   children,
   oninput,
   className,
+  placeholder,
+  right,
   style,
   ...rest
-}: IProps) {
+}: UxTipInputProps) {
   const state = {
     haveText: false as any,
   };
@@ -25,10 +31,10 @@ export function UxTipInput({
       <label
         class={() => ["ux-input__label", state.haveText && "js-have-text"]}
       >
-        {children![0] || "Please input"}
+        {placeholder || "Please input"}
       </label>
       {input}
-      {children![1] && children![1]}
+      {right && right}
     </div>
   );
 
@@ -37,11 +43,12 @@ export function UxTipInput({
 
 css`
   .ux-input {
+    height: var(--h);
     font-family: var(--sans);
     position: relative;
     transition: 0.2s all ease-out;
-    border-radius: 4px;
-    border: 1px solid var(--grey);
+    border-radius: var(--r);
+    border: 1px solid var(--line);
     display: grid;
     grid-template-columns: 1fr auto;
   }
@@ -55,7 +62,7 @@ css`
     box-shadow: 0px 0px 0px 2px var(--primary);
   }
   .ux-input > .ux-input__label {
-    color: var(--weak);
+    color: var(--label);
     transform-origin: left;
     transition: 0.17s all ease-out;
     position: block;

@@ -76,12 +76,12 @@ export function _Model(
   const moveIn = moveInList[direction] as any;
 
   setTimeout(() => {
-    <MaskEl style={{ background: "var(--black-5)" }}></MaskEl>;
+    <MaskEl style={{ background: "var(--mask-deep)" }}></MaskEl>;
     <Content style={{ ...moveIn }}></Content>;
   });
 
   const close = () => {
-    <MaskEl style={{ background: "var(--black-0)" }}></MaskEl>;
+    <MaskEl style={{ background: "var(--alpha)" }}></MaskEl>;
     if (direction === "center") {
       <Content style={{ ...moveOut, opacity: 0 }}></Content>;
     } else {
@@ -121,7 +121,7 @@ export function _Model(
         position: "fixed",
         top: "0px",
         left: "0px",
-        background: "var(--black-0)",
+        background: "var(--alpha)",
         pointerEvents: mask ? void 0 : "none",
         zIndex: 100,
         overflow: "hidden",
@@ -156,6 +156,7 @@ export function UxModel({ children, ...rest }: IModel) {
 
 css`
   .ux-model {
+    font-family: var(--sans);
     display: grid;
   }
   .ux-model-bottom {

@@ -24,7 +24,7 @@ css`
     position: relative;
     transition: 0.2s all ease-out;
     border-radius: 4px;
-    border: 1px solid var(--grey);
+    border: 1px solid var(--gray);
     display: grid;
     width: 100%;
     background: var(--select-arrow-img) no-repeat scroll transparent;

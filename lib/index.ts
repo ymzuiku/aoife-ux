@@ -6,10 +6,10 @@ export * from "./UxSendCode";
 export * from "./UxSelect";
 export * from "./UxModel";
 export * from "./UxAlert";
-export * from "./UxLayout";
 export * from "./UxCell";
 export * from "./UxAppTab";
 export * from "./UxSwipe";
+export * from "./UxSimpleInput";
 
 import "flavorcss";
 import * as device from "./device";

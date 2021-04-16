@@ -61,7 +61,7 @@ export function UxSendCode({
       onclick={_onSend}
       class={() => ["ux-send-code", isWaiting() && "js-loading"]}
     >
-      {() => (isWaiting() ? getTime() : children![1])}
+      {() => (isWaiting() ? getTime() : children![1] || "发送验证码")}
     </button>
   );
 
@@ -82,12 +82,14 @@ export function UxSendCode({
 
 css`
   .ux-send-code {
-    color: var(--primary);
+    color: var(--light);
+    background: var(--primary);
     font-weight: 500;
     margin: 6px;
     font-size: 16px;
     padding: 0 20px;
     min-width: 80px;
+    border-radius: var(--r);
   }
   .ux-send-code * {
     cursor: pointer;
@@ -95,12 +97,12 @@ css`
   .ux-send-code.js-loading {
     font-size: 20px;
     font-weight: 400;
-    color: var(--line);
+    color: var(--light);
+    background: var(--line);
   }
   @media (pointer: fine) {
     .ux-send-code:hover {
-      background: var(--line);
-      border-radius: 4px;
+      background: var(--primary-deep);
     }
   }
 `;

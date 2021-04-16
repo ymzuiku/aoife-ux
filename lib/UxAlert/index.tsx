@@ -57,6 +57,9 @@ function AlertElement({
   );
 }
 
+/** 实例之后加入到 document.body 中
+ *  document.body.append(<UxAlert>hello</UxAlert>)
+ */
 export function UxAlert({ global, children, ...rest }: IAlertProps = {}) {
   const events = { close: () => {} };
   return (
@@ -90,27 +93,27 @@ css`
   }
   .ux-alert-btn {
     font-weight: 500;
-    border-left: 1px solid var(--gray-300);
-    border-top: 1px solid var(--gray-300);
+    font-size: 14px;
+    border-left: 1px solid var(--line);
+    border-top: 1px solid var(--line);
     text-align: center;
     padding: 14px;
     cursor: pointer;
-    color: var(--primary-600);
-    background: var(--white);
+    color: var(--primary);
   }
-  @media (min-width: 640px) {
+  @media (pointer: fine) {
     .ux-alert-btn:hover {
-      background: var(--gray-200);
+      background: var(--gray);
     }
   }
   .ux-alert-btn-cancel {
-    color: var(--gray-600) !important;
+    color: var(--label-deep) !important;
   }
   .ux-alert-form {
-    width: 400px;
-    background: var(--white);
-    border-radius: 6px;
-    box-shadow: 0px 4px 10px var(--black-2);
+    width: 350px;
+    background: var(--bg);
+    border-radius: var(--r);
+    box-shadow: 0px 4px 10px var(--shadow-deep);
     overflow: hidden;
   }
   @media (min-width: 640px) {
@@ -120,14 +123,14 @@ css`
     }
   }
   .ux-alert-title {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     padding: 20px;
     padding-bottom: 0px;
-    background: var(--white);
+    background: var(--bg);
   }
   .ux-alert-content {
     padding: 20px;
-    background: var(--white);
+    background: var(--bg);
   }
 `;

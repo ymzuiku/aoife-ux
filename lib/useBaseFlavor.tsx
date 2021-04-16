@@ -1,26 +1,60 @@
 export function useBaseFlavor() {
   const dark = `
---bg: #000;
---front: #fff;
---primary: #303139;
---active: #222223;
---plan: #1c1c1d;
---grey: #181818;
---weak: #939398;
---area: #E8E8EA;
---line: #28282a;
+--bg: #353C45;
+--bg-deep: #484F5A;
+--light: #fff;
+--light-deep: #85909F;
+--dark: #333A44;
+--dark-deep: #242B38;
+--text: #9BA5B0;
+--text-deep: #E2E2E2;
+--label: #8791A0;
+--label-deep: #93A0B5;
+--primary: #747CEC;
+--primary-deep: #6269C9;
+--second: #5FCC9B;
+--second-deep: #50AC83;
+--active: #4973F2;
+--active-deep: #3862E1;
+--warn: #FDF1D0;
+--warn-deep: #937224;
+--error: #FFCFCF;
+--error-deep: #CC3F3F;
+--info: #484F5A;
+--info-deep: #ABB6C2;
+--disable: #535A64;
+--disable-deep: #586475;
+--gray: #353A40;
+--gray-deep: #424953;
 `;
 
   const light = `
 --bg: #fff;
---front: #fff;
---primary: #4EA75C;
---active: #358341;
---plan: #fff;
---grey: #EFEFF4;
---weak: #939398;
---area: #E8E8EA;
---line: #e9e9e9;
+--bg-deep: #FAFBFD;
+--light: #fff;
+--light-deep: #464E59;
+--dark: #333A44;
+--dark-deep: #242B38;
+--text: #6F757D;
+--text-deep: #595F63;
+--label: #9EA8AE;
+--label-deep: #8C969C;
+--primary: #747CEC;
+--primary-deep: #6269C9;
+--second: #5FCC9B;
+--second-deep: #50AC83;
+--active: #4973F2;
+--active-deep: #3862E1;
+--warn: #FDF1D0;
+--warn-deep: #937224;
+--error: #FFCFCF;
+--error-deep: #CC3F3F;
+--info: #F1F3F9;
+--info-deep: #6E757C;
+--disable: #DFE1E5;
+--disable-deep: #677388;
+--gray: #F8FAFC;
+--gray-deep: #EFF2F6;
 `;
 
   const cssVal = `
@@ -36,6 +70,16 @@ export function useBaseFlavor() {
 --ease-in: cubic-bezier(0.4, 0, 1, 1);
 --ease-out: cubic-bezier(0, 0, 0.2, 1);
 --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+--shadow: rgba(0,0,0,0.1);
+--shadow-deep: rgba(0,0,0,0.2);
+--line: rgba(0,0,0,0.09);
+--r: 10px;
+--h: 44px;
+--w: 240px;
+--line-deep: rgba(0,0,0,0.16);
+--alpha: rgba(0,0,0,0);
+--mask: rgba(0,0,0,0.35);
+--mask-deep: rgba(0,0,0,0.6);
 }
 :root {
   ${light}
@@ -51,14 +95,24 @@ export function useBaseFlavor() {
 .dark {
   ${dark}
 }
-
 body {
   margin: 0px;
   padding: 0px;
   background: var(--bg);
 }
-
-button, input, a {
+.box {
+  box-sizing: border-box;
+}
+* {
+  box-sizing: border-box;
+}
+.border-box {
+  box-sizing: border-box;
+}
+.content-box {
+  box-sizing: content-box;
+}
+.none, button, input, a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-appearance: none;
   border: none;
@@ -76,8 +130,8 @@ button, input, a {
   document.head.append(sty);
 
   const flavor = `
-t: transition:$1;
-from: transform:$1;
+time: transition:$1;
+form: transform:$1;
 sans: font-family:--sans;
 serif: font-family:--serif;
 mono: font-family:--mono;
@@ -86,8 +140,8 @@ pe: pointer-events:$1;
 pos: position:$1;
 area: grid-area:$1;
 areas: display:grid grid-template-areas:$1;
-col: display:grid grid-auto-flow:column;
-row: display:grid grid-auto-flow:row;
+col-flow: display:grid grid-auto-flow:column;
+row-flow: display:grid grid-auto-flow:row;
 rows: display:grid grid-template-rows:$1;
 cols: display:grid grid-template-columns:$1;
 bg: background:$1;
@@ -122,9 +176,10 @@ bt: border-top:$1;
 bb: border-bottom:$1;
 b: border:$1;
 z: z-index:$1;
-o: overflow:$1 -webkit-overflow-scrolling:touch;
-ox: overflow-x:$1 -webkit-overflow-scrolling:touch;
-oy: overflow-y:$1 -webkit-overflow-scrolling:touch;
+o: opacity:$1;
+of: overflow:$1 -webkit-overflow-scrolling:touch;
+of-x: overflow-x:$1 -webkit-overflow-scrolling:touch;
+of-y: overflow-y:$1 -webkit-overflow-scrolling:touch;
 radius: border-radius:$1;
 `;
 
