@@ -10,6 +10,8 @@ export * from "./UxCell";
 export * from "./UxAppTab";
 export * from "./UxSwipe";
 export * from "./UxSimpleInput";
+export * from "./UxMessage";
+export * from "./tools";
 
 import "flavorcss";
 import * as device from "./device";
