@@ -14,7 +14,6 @@ export * from "./ux/UxInputOut";
 export * from "./ux/UxMessage";
 export * from "./tools";
 
-import "flavorcss";
 import * as device from "./device";
 import { useBaseFlavor } from "./useBaseFlavor";
 

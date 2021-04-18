@@ -12,8 +12,8 @@ export function useBaseFlavor() {
 --label-deep: #93A0B5;
 --primary: #747CEC;
 --primary-deep: #6269C9;
---second: #5FCC9B;
---second-deep: #50AC83;
+--secondary: #5FCC9B;
+--secondary-deep: #50AC83;
 --active: rgba(73,115,242,0.35);
 --active-deep: rgba(73,115,242,0.5);;
 --warn: #FDF1D0;
@@ -43,8 +43,8 @@ export function useBaseFlavor() {
 --label-deep: #8C969C;
 --primary: #747CEC;
 --primary-deep: #6269C9;
---second: #5FCC9B;
---second-deep: #50AC83;
+--secondary: #5FCC9B;
+--secondary-deep: #50AC83;
 --active: rgba(73,115,242,0.35);
 --active-deep: rgba(73,115,242,0.5);;
 --warn: #FDF1D0;
@@ -63,7 +63,7 @@ export function useBaseFlavor() {
 
   const cssVal = `
 :root {
-  --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+--sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
   "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
   "Noto Color Emoji";
@@ -106,9 +106,6 @@ body {
   padding: 0px;
   background: var(--bg);
 }
-.box {
-  box-sizing: border-box;
-}
 * {
   box-sizing: border-box;
 }
@@ -144,12 +141,19 @@ mono: font-family:--mono;
 d: display:$1;
 pe: pointer-events:$1;
 pos: position:$1;
+
+flex-row: display:flex flex-direction:row;
+flex-col: display:flex flex-direction:column;
+
 area: grid-area:$1;
 areas: display:grid grid-template-areas:$1;
-col-flow: display:grid grid-auto-flow:column;
-row-flow: display:grid grid-auto-flow:row;
+
+col: display:grid grid-auto-flow:column;
+row: display:grid grid-auto-flow:row;
+
 rows: display:grid grid-template-rows:$1;
 cols: display:grid grid-template-columns:$1;
+
 bg: background:$1;
 bgm: background-image:$1;
 gradient: background-image:linear-gradient($1,$2,$3);
@@ -185,10 +189,10 @@ z: z-index:$1;
 o: opacity:$1;
 c: color:$1;
 s: box-shadow:$1;
+r: border-radius:$1;
 of: overflow:$1 -webkit-overflow-scrolling:touch;
 of-x: overflow-x:$1 -webkit-overflow-scrolling:touch;
 of-y: overflow-y:$1 -webkit-overflow-scrolling:touch;
-radius: border-radius:$1;
 `;
 
   const flavorEle = document.createElement("div");
