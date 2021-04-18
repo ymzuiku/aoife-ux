@@ -1,10 +1,10 @@
 import css from "template-css";
 
-interface UxTipInputProps extends IProps {
+interface UxInputTipProps extends IProps {
   right?: any;
 }
 
-export function UxTipInput({
+export function UxInputTip({
   children,
   oninput,
   className,
@@ -12,7 +12,7 @@ export function UxTipInput({
   right,
   style,
   ...rest
-}: UxTipInputProps) {
+}: UxInputTipProps) {
   const state = {
     haveText: false as any,
   };

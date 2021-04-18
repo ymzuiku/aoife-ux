@@ -14,8 +14,8 @@ export function useBaseFlavor() {
 --primary-deep: #6269C9;
 --second: #5FCC9B;
 --second-deep: #50AC83;
---active: #4973F2;
---active-deep: #3862E1;
+--active: rgba(73,115,242,0.35);
+--active-deep: rgba(73,115,242,0.5);;
 --warn: #FDF1D0;
 --warn-deep: #937224;
 --error: #FFCFCF;
@@ -26,6 +26,8 @@ export function useBaseFlavor() {
 --disable-deep: #586475;
 --gray: #353A40;
 --gray-deep: #424953;
+--area: #F6F8FA;
+--area-deep: #EFF3F7;
 `;
 
   const light = `
@@ -43,8 +45,8 @@ export function useBaseFlavor() {
 --primary-deep: #6269C9;
 --second: #5FCC9B;
 --second-deep: #50AC83;
---active: #4973F2;
---active-deep: #3862E1;
+--active: rgba(73,115,242,0.35);
+--active-deep: rgba(73,115,242,0.5);;
 --warn: #FDF1D0;
 --warn-deep: #937224;
 --error: #FFCFCF;
@@ -55,6 +57,8 @@ export function useBaseFlavor() {
 --disable-deep: #677388;
 --gray: #F8FAFC;
 --gray-deep: #EFF2F6;
+--area: #F6F8FA;
+--area-deep: #EFF3F7;
 `;
 
   const cssVal = `
@@ -73,13 +77,15 @@ export function useBaseFlavor() {
 --shadow: rgba(0,0,0,0.1);
 --shadow-deep: rgba(0,0,0,0.2);
 --line: rgba(0,0,0,0.09);
---r: 10px;
---h: 44px;
---w: 240px;
 --line-deep: rgba(0,0,0,0.16);
 --alpha: rgba(0,0,0,0);
 --mask: rgba(0,0,0,0.35);
 --mask-deep: rgba(0,0,0,0.6);
+--r: 7px;
+--h: 44px;
+--w: 240px;
+--a: 10px;
+--a2: 20px;
 }
 :root {
   ${light}
@@ -177,6 +183,8 @@ bb: border-bottom:$1;
 b: border:$1;
 z: z-index:$1;
 o: opacity:$1;
+c: color:$1;
+s: box-shadow:$1;
 of: overflow:$1 -webkit-overflow-scrolling:touch;
 of-x: overflow-x:$1 -webkit-overflow-scrolling:touch;
 of-y: overflow-y:$1 -webkit-overflow-scrolling:touch;

@@ -1,5 +1,5 @@
 import css from "template-css";
-import { UxTipInput } from "./UxTipInput";
+import { UxInputTip } from "./UxInputTip";
 import { NanoStorage } from "nano-storage";
 
 interface UxSendCodeProps extends IProps {
@@ -72,10 +72,10 @@ export function UxSendCode({
   }
 
   const out = (
-    <UxTipInput {...rest}>
+    <UxInputTip {...rest}>
       {children![0]}
       {button}
-    </UxTipInput>
+    </UxInputTip>
   ) as HTMLElement;
   return out;
 }

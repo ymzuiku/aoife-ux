@@ -1,5 +1,4 @@
 export * from "./ux/UxButton";
-export * from "./ux/UxTipInput";
 export * from "./ux/UxApp";
 export * from "./ux/UxSelect";
 export * from "./ux/UxSendCode";
@@ -9,7 +8,9 @@ export * from "./ux/UxAlert";
 export * from "./ux/UxCell";
 export * from "./ux/UxAppTab";
 export * from "./ux/UxSwipe";
-export * from "./ux/UxSimpleInput";
+export * from "./ux/UxInputTip";
+export * from "./ux/UxInputWeak";
+export * from "./ux/UxInputOut";
 export * from "./ux/UxMessage";
 export * from "./tools";
 
