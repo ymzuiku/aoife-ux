@@ -128,21 +128,37 @@ article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summ
   outline: none;
 }
 
-.flow-col {
+.g-col {
   display: grid;
   grid-auto-flow: column;
 }
-.flow-row {
+.g-row {
   display: grid;
   grid-auto-flow: row;
 }
-.flow-col-dense {
+.g-col-dense {
   display: grid;
   grid-auto-flow: column dense;
 }
-.flow-row-dense {
+.g-row-dense {
   display: grid;
   grid-auto-flow: row dense;
+}
+.f-row {
+  display: flex;
+  flex-direction: row;
+}
+.f-col {
+  display: flex;
+  flex-direction: column;
+}
+.f-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.f-col-reverse {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 @media (pointer: fine) {
@@ -163,14 +179,18 @@ d: display:$1;
 pe: pointer-events:$1;
 pos: position:$1;
 
-flex-row: display:flex flex-direction:row;
-flex-col: display:flex flex-direction:column;
-
 area: grid-area:$1;
 areas: display:grid grid-template-areas:$1;
 
 rows: display:grid grid-template-rows:$1;
 cols: display:grid grid-template-columns:$1;
+
+pc: place-content:$1;
+ps: place-self:$1;
+jc: justify-content:$1;
+js: justify-self:$1;
+ai: align-items:$1;
+as: align-self:$1;
 
 bg: background:$1;
 bgm: background-image:$1;
