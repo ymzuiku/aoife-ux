@@ -37,6 +37,8 @@ export function useBaseFlavor() {
 --light-deep: #464E59;
 --dark: #333A44;
 --dark-deep: #242B38;
+--title: #6F757D;
+--title-deep: #595F63;
 --text: #6F757D;
 --text-deep: #595F63;
 --label: #9EA8AE;
@@ -106,6 +108,10 @@ body {
   padding: 0px;
   background: var(--bg);
 }
+article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summary,time {
+  margin: 0px;
+  padding: 0px;
+}
 * {
   box-sizing: border-box;
 }
@@ -115,11 +121,28 @@ body {
 .content-box {
   box-sizing: content-box;
 }
-.none, button, input, a {
+.none, button, input, a, select {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-appearance: none;
   border: none;
   outline: none;
+}
+
+.flow-col {
+  display: grid;
+  grid-auto-flow: column;
+}
+.flow-row {
+  display: grid;
+  grid-auto-flow: row;
+}
+.flow-col-dense {
+  display: grid;
+  grid-auto-flow: column dense;
+}
+.flow-row-dense {
+  display: grid;
+  grid-auto-flow: row dense;
 }
 
 @media (pointer: fine) {
@@ -135,9 +158,7 @@ body {
   const flavor = `
 time: transition:$1;
 form: transform:$1;
-sans: font-family:--sans;
-serif: font-family:--serif;
-mono: font-family:--mono;
+fm: font-family:$1;
 d: display:$1;
 pe: pointer-events:$1;
 pos: position:$1;
@@ -147,9 +168,6 @@ flex-col: display:flex flex-direction:column;
 
 area: grid-area:$1;
 areas: display:grid grid-template-areas:$1;
-
-col: display:grid grid-auto-flow:column;
-row: display:grid grid-auto-flow:row;
 
 rows: display:grid grid-template-rows:$1;
 cols: display:grid grid-template-columns:$1;
@@ -180,16 +198,25 @@ px: padding-bottom:0|$1;
 py: padding-bottom:$1|0;
 fs: font-size:$1;
 fw: font-weight:$1;
+
 br: border-right:$1;
 bl: border-left:$1;
 bt: border-top:$1;
 bb: border-bottom:$1;
 b: border:$1;
+
+br1: border-right:1px|solid|$1;
+bl1: border-left:1px|solid|$1;
+bt1: border-top:1px|solid|$1;
+bb1: border-bottom:1px|solid|$1;
+b1: border:1px|solid|$1;
+
 z: z-index:$1;
 o: opacity:$1;
 c: color:$1;
 s: box-shadow:$1;
 r: border-radius:$1;
+ol: outline:$1;
 of: overflow:$1 -webkit-overflow-scrolling:touch;
 of-x: overflow-x:$1 -webkit-overflow-scrolling:touch;
 of-y: overflow-y:$1 -webkit-overflow-scrolling:touch;
