@@ -83,6 +83,7 @@ export function useBaseFlavor() {
 --alpha: rgba(0,0,0,0);
 --mask: rgba(0,0,0,0.35);
 --mask-deep: rgba(0,0,0,0.6);
+--px: 1px;
 --r: 7px;
 --h: 44px;
 --w: 240px;
@@ -103,17 +104,41 @@ export function useBaseFlavor() {
 .dark {
   ${dark}
 }
-body {
+body.reboot{
   margin: 0px;
   padding: 0px;
   background: var(--bg);
 }
-article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summary,time {
+.reboot article,
+.reboot aside,
+.reboot details,
+.reboot figcaption,
+.reboot figure,
+.reboot footer,
+.reboot header,
+.reboot main,
+.reboot mark,
+.reboot nav,
+.reboot section,
+.reboot summary,
+.reboot time {
   margin: 0px;
   padding: 0px;
 }
-* {
+.reboot * {
   box-sizing: border-box;
+}
+.tap-none, .reboot button, .reboot input, .reboot a, .reboot select {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+}
+@media (pointer: fine) {
+  .reboot button,
+  .reboot a {
+    cursor: pointer;
+  }
 }
 .border-box {
   box-sizing: border-box;
@@ -121,13 +146,6 @@ article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summ
 .content-box {
   box-sizing: content-box;
 }
-.none, button, input, a, select {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-appearance: none;
-  border: none;
-  outline: none;
-}
-
 .g-col {
   display: grid;
   grid-auto-flow: column;
@@ -160,12 +178,6 @@ article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summ
   display: flex;
   flex-direction: column-reverse;
 }
-
-@media (pointer: fine) {
-  button, a {
-    cursor: pointer;
-  }
-}
   `;
   const sty = document.createElement("style");
   sty.textContent = cssVal;
@@ -179,23 +191,27 @@ d: display:$1;
 pe: pointer-events:$1;
 pos: position:$1;
 
-area: grid-area:$1;
-areas: display:grid grid-template-areas:$1;
+g-area: grid-area:$1;
+g-areas: display:grid grid-template-areas:$1;
 
-rows: display:grid grid-template-rows:$1;
-cols: display:grid grid-template-columns:$1;
+g-rows: display:grid grid-template-rows:$1;
+g-cols: display:grid grid-template-columns:$1;
 
 pc: place-content:$1;
+pi: place-items:$1;
 ps: place-self:$1;
 jc: justify-content:$1;
+ji: justify-items:$1;
 js: justify-self:$1;
+ac: align-content:$1;
 ai: align-items:$1;
 as: align-self:$1;
 
 bg: background:$1;
 bgm: background-image:$1;
 gradient: background-image:linear-gradient($1,$2,$3);
-text-gradient: -webkit-background-clip:text gradient:$1,$2,$3 color:rgba(0,0,0,0);
+text-gradient: -webkit-background-clip:text gradient:$1,$2,$3 color:--alpha;
+
 h: height:$1;
 min-h: min-height:$1;
 max-h: max-height:$1;
@@ -225,11 +241,11 @@ bt: border-top:$1;
 bb: border-bottom:$1;
 b: border:$1;
 
-br1: border-right:1px|solid|$1;
-bl1: border-left:1px|solid|$1;
-bt1: border-top:1px|solid|$1;
-bb1: border-bottom:1px|solid|$1;
-b1: border:1px|solid|$1;
+br-px: border-right:--px|solid|$1;
+bl-px: border-left:--px|solid|$1;
+bt-px: border-top:--px|solid|$1;
+bb-px: border-bottom:--px|solid|$1;
+b-px: border:--px|solid|$1;
 
 z: z-index:$1;
 o: opacity:$1;
@@ -242,7 +258,7 @@ of-x: overflow-x:$1 -webkit-overflow-scrolling:touch;
 of-y: overflow-y:$1 -webkit-overflow-scrolling:touch;
 `;
 
-  const flavorEle = document.createElement("div");
+  const flavorEle = document.createElement("mark");
   flavorEle.style.display = "none";
   flavorEle.setAttribute("flavor", "");
   flavorEle.textContent = flavor;
