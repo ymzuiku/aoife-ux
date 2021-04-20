@@ -1,4 +1,16 @@
 export function useBaseFlavor() {
+  let alphas = "";
+  [
+    ["white", "255,255,255"],
+    ["black", "0,0,0"],
+  ].forEach(function (item) {
+    const [k, v] = item;
+    for (var a = 0; a <= 99; a += 5) {
+      alphas += `--${k}-${a}:rgba(${v},0.${a}); `;
+    }
+    alphas += `--${k}:rgba(${v},1); `;
+  });
+
   const light = `
 --bg-weak: #FAFBFD;
 --bg: #fff;
@@ -12,6 +24,10 @@ export function useBaseFlavor() {
 --dark: #333A44;
 --dark-deep: #000;
 
+--gray-weak: #F8FAFC;
+--gray: #EFF2F6;
+--gray-deep: #E7EBF1;
+
 --title-weak: #7f848a;
 --title: #6F757D;
 --title-deep: #3c4246;
@@ -23,10 +39,6 @@ export function useBaseFlavor() {
 --label-weak: #b9bec1;
 --label: #9EA8AE;
 --label-deep: #8C969C;
-
---gray-weak: #F8FAFC;
---gray: #EFF2F6;
---gray-deep: #E7EBF1;
 
 --primary-weak: #d9dbfd;
 --primary: #747CEC;
@@ -70,6 +82,10 @@ export function useBaseFlavor() {
 --dark: #181d23;
 --dark-deep: #000000;
 
+--gray-weak: #3b414a;
+--gray: #424953;
+--gray-deep: #585f69;
+
 --title-weak: #7f848a;
 --title: #c4cad2;
 --title-deep: #dee2e4;
@@ -81,10 +97,6 @@ export function useBaseFlavor() {
 --label-weak: #727b88;
 --label: #8791A0;
 --label-deep: #93A0B5;
-
---gray-weak: #3b414a;
---gray: #424953;
---gray-deep: #585f69;
 
 --primary-weak: #d9dbfd;
 --primary: #747CEC;
@@ -128,11 +140,6 @@ export function useBaseFlavor() {
 --ease-in: cubic-bezier(0.4, 0, 1, 1);
 --ease-out: cubic-bezier(0, 0, 0.2, 1);
 --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
---shadow: rgba(0,0,0,0.06);
---shadow-deep: rgba(0,0,0,0.12);
---line: rgba(0,0,0,0.09);
---line-deep: rgba(0,0,0,0.16);
---alpha: rgba(0,0,0,0);
 --mask: rgba(0,0,0,0.35);
 --mask-deep: rgba(0,0,0,0.6);
 --base-fs: 16px;
@@ -142,6 +149,7 @@ export function useBaseFlavor() {
 --w: 240px;
 --a: 10px;
 --a2: 20px;
+${alphas}
 }
 :root {
   ${light}

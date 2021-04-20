@@ -51,7 +51,7 @@ export const UxColorsDebug = () => {
   --disable-weak
   --disable
   --disable-deep
-  
+
   --gray-weak
   --gray
   --gray-deep
@@ -60,12 +60,21 @@ export const UxColorsDebug = () => {
     .map((v) => v.trim())
     .filter(Boolean);
 
+  const alpha = [] as string[];
+  ["black", "white"].forEach(function (k) {
+    for (var a = 0; a <= 99; a += 5) {
+      alpha.push(`--${k}-${a}`);
+    }
+    alpha.push(`--${k}`);
+  });
+
   return (
     <section scroll-y class="oy:auto">
       {["light", "dark"].map((theme) => {
         return (
           <div class={theme}>
             <div class="bg:--bg g-cols:repeat(6,auto) p:40px">
+              <h2 class="c:--title-deep">{theme}</h2>
               {colors.map((c) => {
                 return (
                   <div class="m:--a g-row pi:center grid-gap:--a">
@@ -80,6 +89,19 @@ export const UxColorsDebug = () => {
           </div>
         );
       })}
+      <div class="bg:#888 g-cols:repeat(6,auto) p:40px">
+        <h2>White And Black</h2>
+        {alpha.map((c) => {
+          return (
+            <div class="m:--a g-row pi:center grid-gap:--a">
+              <div
+                class={`bg:${c} wh:100px r:--r b:1px|solid|rgba(0,0,0,0.01) as:center`}
+              ></div>
+              <p class="bg:--bg c:--title-deep ta:center bg:--black-0">{c}</p>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 };
