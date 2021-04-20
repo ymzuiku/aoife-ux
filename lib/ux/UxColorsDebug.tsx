@@ -1,0 +1,85 @@
+export const UxColorsDebug = () => {
+  const colors = `
+  --bg-weak
+  --bg
+  --bg-deep
+  
+  --light-weak
+  --light
+  --light-deep
+  
+  --dark-weak
+  --dark
+  --dark-deep
+  
+  --title-weak
+  --title
+  --title-deep
+  
+  --text-weak
+  --text
+  --text-deep
+  
+  --label-weak
+  --label
+  --label-deep
+  
+  --primary-weak
+  --primary
+  --primary-deep
+  
+  --secondary-weak
+  --secondary
+  --secondary-deep
+  
+  --active-weak
+  --active
+  --active-deep
+  
+  --warn-weak
+  --warn
+  --warn-deep
+  
+  --error-weak
+  --error
+  --error-deep
+  
+  --info-weak
+  --info
+  --info-deep
+  
+  --disable-weak
+  --disable
+  --disable-deep
+  
+  --gray-weak
+  --gray
+  --gray-deep
+  `
+    .split("\n")
+    .map((v) => v.trim())
+    .filter(Boolean);
+
+  return (
+    <section scroll-y class="oy:auto">
+      {["light", "dark"].map((theme) => {
+        return (
+          <div class={theme}>
+            <div class="bg:--bg g-cols:repeat(6,auto) p:40px">
+              {colors.map((c) => {
+                return (
+                  <div class="m:--a g-row pi:center grid-gap:--a">
+                    <div
+                      class={`bg:${c} wh:100px r:--r b:1px|solid|rgba(0,0,0,0.01) as:center`}
+                    ></div>
+                    <p class="bg:--bg c:--text ta:center">{c}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
+    </section>
+  );
+};

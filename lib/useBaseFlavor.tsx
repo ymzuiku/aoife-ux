@@ -1,74 +1,126 @@
 export function useBaseFlavor() {
-  const dark = `
---bg: #353C45;
---bg-deep: #484F5A;
---light: #fff;
---light-deep: #85909F;
---dark: #333A44;
---dark-deep: #242B38;
---text: #9BA5B0;
---text-deep: #E2E2E2;
---label: #8791A0;
---label-deep: #93A0B5;
---primary: #747CEC;
---primary-deep: #6269C9;
---secondary: #5FCC9B;
---secondary-deep: #50AC83;
---active: rgba(73,115,242,0.35);
---active-deep: rgba(73,115,242,0.5);;
---warn: #FDF1D0;
---warn-deep: #937224;
---error: #FFCFCF;
---error-deep: #CC3F3F;
---info: #484F5A;
---info-deep: #ABB6C2;
---disable: #535A64;
---disable-deep: #586475;
---gray: #353A40;
---gray-deep: #424953;
---area: #F6F8FA;
---area-deep: #EFF3F7;
-`;
-
   const light = `
+--bg-weak: #FAFBFD;
 --bg: #fff;
---bg-deep: #FAFBFD;
+--bg-deep: #dbdbdc;
+
+--light-weak: #FAFBFD;
 --light: #fff;
---light-deep: #464E59;
+--light-deep: #dbdbdc;
+
+--dark-weak: #5b6169;
 --dark: #333A44;
---dark-deep: #242B38;
+--dark-deep: #000;
+
+--title-weak: #7f848a;
 --title: #6F757D;
---title-deep: #595F63;
+--title-deep: #3c4246;
+
+--text-weak: #82878e;
 --text: #6F757D;
 --text-deep: #595F63;
+
+--label-weak: #b9bec1;
 --label: #9EA8AE;
 --label-deep: #8C969C;
+
+--gray-weak: #F8FAFC;
+--gray: #EFF2F6;
+--gray-deep: #E7EBF1;
+
+--primary-weak: #d9dbfd;
 --primary: #747CEC;
 --primary-deep: #6269C9;
+
+--secondary-weak: #cbf3e0;
 --secondary: #5FCC9B;
 --secondary-deep: #50AC83;
+
+--active-weak: rgba(196,206,236,0.35);
 --active: rgba(73,115,242,0.35);
---active-deep: rgba(73,115,242,0.5);;
---warn: #FDF1D0;
+--active-deep: rgba(73,115,242,0.5);
+
+--warn-weak: #FDF1D0;
+--warn: #d4c396;
 --warn-deep: #937224;
---error: #FFCFCF;
+
+--error-weak: #FFCFCF;
+--error: #ffaeae;
 --error-deep: #CC3F3F;
---info: #F1F3F9;
+
+--info-weak: #F1F3F9;
+--info: #c0c6d8;
 --info-deep: #6E757C;
---disable: #DFE1E5;
+
+--disable-weak: #DFE1E5;
+--disable: #afb1b5;
 --disable-deep: #677388;
---gray: #F8FAFC;
---gray-deep: #EFF2F6;
---area: #F6F8FA;
---area-deep: #EFF3F7;
+`;
+
+  const dark = `
+--bg-weak: #3e4650;
+--bg: #353C45;
+--bg-deep: #2e333c;
+
+--light-weak: #85909F;
+--light: #dadbdc;
+--light-deep: #fff;
+
+--dark-weak: #242B38;
+--dark: #181d23;
+--dark-deep: #000000;
+
+--title-weak: #7f848a;
+--title: #c4cad2;
+--title-deep: #dee2e4;
+
+--text-weak: #8d97a2;
+--text: #aab4bf;
+--text-deep: #E2E2E2;
+
+--label-weak: #727b88;
+--label: #8791A0;
+--label-deep: #93A0B5;
+
+--gray-weak: #3b414a;
+--gray: #424953;
+--gray-deep: #585f69;
+
+--primary-weak: #d9dbfd;
+--primary: #747CEC;
+--primary-deep: #6269C9;
+
+--secondary-weak: #cbf3e0;
+--secondary: #5FCC9B;
+--secondary-deep: #50AC83;
+
+--active-weak: rgba(196,206,236,0.35);
+--active: rgba(73,115,242,0.35);
+--active-deep: rgba(73,115,242,0.5);
+
+--warn-weak: #FDF1D0;
+--warn: #d4c396;
+--warn-deep: #937224;
+
+--error-weak: #FFCFCF;
+--error: #ffaeae;
+--error-deep: #CC3F3F;
+
+--info-weak: #F1F3F9;
+--info: #c0c6d8;
+--info-deep: #6E757C;
+
+--disable-weak: #DFE1E5;
+--disable: #afb1b5;
+--disable-deep: #677388;
+
+
 `;
 
   const cssVal = `
 :root {
---sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-  "Noto Color Emoji";
+--sans: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "Noto Sans";
 --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
   "Liberation Mono", "Courier New", monospace;
@@ -76,16 +128,17 @@ export function useBaseFlavor() {
 --ease-in: cubic-bezier(0.4, 0, 1, 1);
 --ease-out: cubic-bezier(0, 0, 0.2, 1);
 --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
---shadow: rgba(0,0,0,0.1);
---shadow-deep: rgba(0,0,0,0.2);
+--shadow: rgba(0,0,0,0.06);
+--shadow-deep: rgba(0,0,0,0.12);
 --line: rgba(0,0,0,0.09);
 --line-deep: rgba(0,0,0,0.16);
 --alpha: rgba(0,0,0,0);
 --mask: rgba(0,0,0,0.35);
 --mask-deep: rgba(0,0,0,0.6);
+--base-fs: 16px;
 --px: 1px;
 --r: 7px;
---h: 44px;
+--h: 48px;
 --w: 240px;
 --a: 10px;
 --a2: 20px;
@@ -108,27 +161,18 @@ body.reboot{
   margin: 0px;
   padding: 0px;
   background: var(--bg);
+  font-size: var(--base-fs);
   font-family: var(--sans);
+  height: 100vh;
+  width: 100vw;
 }
-.reboot article,
-.reboot aside,
-.reboot details,
-.reboot figcaption,
-.reboot figure,
-.reboot footer,
-.reboot header,
-.reboot main,
-.reboot mark,
-.reboot nav,
-.reboot section,
-.reboot summary,
-.reboot time {
+
+.reboot * {
   margin: 0px;
   padding: 0px;
-}
-.reboot * {
   box-sizing: border-box;
 }
+
 .tap-none, .reboot button, .reboot input, .reboot a, .reboot select {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-appearance: none;
@@ -187,7 +231,6 @@ body.reboot{
   const flavor = `
 time: transition:$1;
 form: transform:$1;
-fm: font-family:$1;
 d: display:$1;
 pe: pointer-events:$1;
 pos: position:$1;
@@ -197,6 +240,7 @@ g-areas: display:grid grid-template-areas:$1;
 
 g-rows: display:grid grid-template-rows:$1;
 g-cols: display:grid grid-template-columns:$1;
+
 
 pc: place-content:$1;
 pi: place-items:$1;
@@ -216,25 +260,35 @@ text-gradient: -webkit-background-clip:text gradient:$1,$2,$3 color:--alpha;
 h: height:$1;
 min-h: min-height:$1;
 max-h: max-height:$1;
+
 w: width:$1;
 min-w: min-width:$1;
 max-w: max-width:$1;
+
+wh: width:$1 height:$1;
+min-wh: min-width:$1 min-height:$1;
+max-wh: max-width:$1 max-height:$1;
+
 m: margin:$1;
 mt: margin-top:$1;
 mr: margin-right:$1;
 ml: margin-left:$1;
 mb: margin-bottom:$1;
-mx: margin-bottom:0|$1;
-my: margin-bottom:$1|0;
+mx: margin:0|$1;
+my: margin:$1|0;
+
 p: padding:$1;
 pt: padding-top:$1;
 pr: padding-right:$1;
 pl: padding-left:$1;
 pb: padding-bottom:$1;
-px: padding-bottom:0|$1;
-py: padding-bottom:$1|0;
+px: padding:0|$1;
+py: padding:$1|0;
+
 fs: font-size:$1;
 fw: font-weight:$1;
+fm: font-family:$1;
+lp: letter-spacing:$1;
 
 br: border-right:$1;
 bl: border-left:$1;
@@ -242,11 +296,11 @@ bt: border-top:$1;
 bb: border-bottom:$1;
 b: border:$1;
 
+b-px: border:--px|solid|$1;
 br-px: border-right:--px|solid|$1;
 bl-px: border-left:--px|solid|$1;
 bt-px: border-top:--px|solid|$1;
 bb-px: border-bottom:--px|solid|$1;
-b-px: border:--px|solid|$1;
 
 z: z-index:$1;
 o: opacity:$1;
