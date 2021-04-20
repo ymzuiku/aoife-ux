@@ -108,6 +108,7 @@ body.reboot{
   margin: 0px;
   padding: 0px;
   background: var(--bg);
+  font-family: var(--sans);
 }
 .reboot article,
 .reboot aside,

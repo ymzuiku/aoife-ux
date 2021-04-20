@@ -1,0 +1,42 @@
+@import "./scss/bootstrap.scss";
+
+.tb {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.tb > table > thead th {
+  position: sticky;
+  top: 0px;
+  z-index: 11;
+}
+
+.tb-start > table > thead > tr > th:first-child {
+  z-index: 12;
+  left: 0px;
+  box-shadow: -20px 0 0 var(--table-bg, $white);
+}
+
+.tb-start > table > tbody > tr > th:first-child {
+  position: sticky;
+  left: 0px;
+  background-color: var(--table-bg, $white);
+  z-index: 10;
+  transform: scale(0.96);
+  box-shadow: -20px 0 0 var(--table-bg, $white);
+}
+
+.tb-end > table > thead > tr > th:last-child {
+  z-index: 12;
+  right: 0px;
+  box-shadow: 20px 0 0 var(--table-bg, $white);
+}
+
+.tb-end > table > tbody > tr > th:last-child {
+  position: sticky;
+  right: 0px;
+  background-color: var(--table-bg, $white);
+  z-index: 10;
+  box-shadow: 20px 0 0 var(--table-bg, $white);
+}
