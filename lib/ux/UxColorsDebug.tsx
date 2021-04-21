@@ -77,7 +77,7 @@ export const UxColorsDebug = () => {
               <h2 class="c:--title-deep">{theme}</h2>
               {colors.map((c) => {
                 return (
-                  <div class="m:--a g-row pi:center grid-gap:--a">
+                  <div class="m:--a1 g-row pi:center grid-gap:--a1">
                     <div
                       class={`bg:${c} wh:100px r:--r b:1px|solid|rgba(0,0,0,0.01) as:center`}
                     ></div>
@@ -93,7 +93,7 @@ export const UxColorsDebug = () => {
         <h2>White And Black</h2>
         {alpha.map((c) => {
           return (
-            <div class="m:--a g-row pi:center grid-gap:--a">
+            <div class="m:--a1 g-row pi:center grid-gap:--a1">
               <div
                 class={`bg:${c} wh:100px r:--r b:1px|solid|rgba(0,0,0,0.01) as:center`}
               ></div>

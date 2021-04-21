@@ -5,8 +5,11 @@ export function useBaseFlavor() {
     ["black", "0,0,0"],
   ].forEach(function (item) {
     const [k, v] = item;
+    alphas += `--${k}-0:rgba(${v},0); --${k}-5:rgba(${v},0.05);`;
     for (var a = 0; a <= 99; a += 5) {
-      alphas += `--${k}-${a}:rgba(${v},0.${a}); `;
+      if (a > 5) {
+        alphas += `--${k}-${a}:rgba(${v},0.${a}); `;
+      }
     }
     alphas += `--${k}:rgba(${v},1); `;
   });
@@ -147,8 +150,19 @@ export function useBaseFlavor() {
 --r: 7px;
 --h: 48px;
 --w: 240px;
---a: 10px;
+--a1: 10px;
 --a2: 20px;
+--a3: 30px;
+--a4: 30px;
+--a4: 40px;
+--a5: 50px;
+--a6: 60px;
+--xs: 480px;
+--sm: 640px;
+--md: 768px;
+--lg: 1024px;
+--xl: 1280px;
+--xxl: 1536px;
 ${alphas}
 }
 :root {
@@ -231,18 +245,51 @@ body.reboot{
   display: flex;
   flex-direction: column-reverse;
 }
+.h-safe-top {
+  height: 0;  
+  height: constant(safe-area-inset-top);
+  height: env(safe-area-inset-top);
+}
+.h-safe-bottom {
+  height: 0;  
+  height: constant(safe-area-inset-bottom);
+  height: env(safe-area-inset-bottom);
+}
+.m-safe-top {
+  margin-top: 0;  
+  margin-top: constant(safe-area-inset-top);
+  margin-top: env(safe-area-inset-top);
+}
+.m-safe-bottom {
+  margin-bottom: 0;  
+  margin-bottom: constant(safe-area-inset-bottom);
+  margin-bottom: env(safe-area-inset-bottom);
+}
+.p-safe-top {
+  padding-top: 0;  
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+.p-safe-bottom {
+  padding-bottom: 0;  
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
   `;
   const sty = document.createElement("style");
   sty.textContent = cssVal;
   document.head.append(sty);
 
   const flavor = `
+box: width:100% lg:max-width:$1 margin:0|auto;
+
 time: transition:$1;
 form: transform:$1;
 d: display:$1;
 pe: pointer-events:$1;
 pos: position:$1;
 
+gap: grid-gap:$1;
 g-area: grid-area:$1;
 g-areas: display:grid grid-template-areas:$1;
 
@@ -263,7 +310,7 @@ as: align-self:$1;
 bg: background:$1;
 bgm: background-image:$1;
 gradient: background-image:linear-gradient($1,$2,$3);
-text-gradient: -webkit-background-clip:text gradient:$1,$2,$3 color:--alpha;
+text-gradient: -webkit-background-clip:text gradient:$1,$2,$3 color:rgba(0,0,0,0);
 
 h: height:$1;
 min-h: min-height:$1;
@@ -273,9 +320,9 @@ w: width:$1;
 min-w: min-width:$1;
 max-w: max-width:$1;
 
-wh: width:$1 height:$1;
-min-wh: min-width:$1 min-height:$1;
-max-wh: max-width:$1 max-height:$1;
+s: width:$1 height:$1;
+min-s: min-width:$1 min-height:$1;
+max-s: max-width:$1 max-height:$1;
 
 m: margin:$1;
 mt: margin-top:$1;
@@ -313,7 +360,7 @@ bb-px: border-bottom:--px|solid|$1;
 z: z-index:$1;
 o: opacity:$1;
 c: color:$1;
-s: box-shadow:$1;
+shadow: box-shadow:$1;
 r: border-radius:$1;
 ol: outline:$1;
 of: overflow:$1 -webkit-overflow-scrolling:touch;

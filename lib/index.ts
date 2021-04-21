@@ -13,15 +13,14 @@ export * from "./ux/UxInputWeak";
 export * from "./ux/UxInputOut";
 export * from "./ux/UxMessage";
 export * from "./ux/UxColorsDebug";
+export * from "./ux/UxInputCodes";
 export * from "./tools";
 import * as device from "./device";
-import { useMobileScroll } from "./useMobileScroll";
+import { setMobileScroll, setMobileNotScale } from "./setMobiles";
 import { useBaseFlavor } from "./useBaseFlavor";
 
-useMobileScroll();
-
+setMobileScroll();
+setMobileNotScale();
 useBaseFlavor();
-device.setMobileNotScale();
-// device.setKeyboardAutoHide();
 
 export { device };
