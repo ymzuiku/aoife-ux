@@ -15,11 +15,13 @@ export * from "./ux/UxMessage";
 export * from "./ux/UxColorsDebug";
 export * from "./ux/UxInputCodes";
 export * from "./tools";
+export * from "./ux/UxNavBar";
+export * from "./ux/UxBackButton";
 import * as device from "./device";
-import { setMobileScroll, setMobileNotScale } from "./setMobiles";
+import { setMobileNotScale } from "./setMobiles";
 import { useBaseFlavor } from "./useBaseFlavor";
 
-setMobileScroll();
+// setMobileScroll();
 setMobileNotScale();
 useBaseFlavor();
 

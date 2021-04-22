@@ -202,8 +202,10 @@ body.reboot{
   outline: none;
 }
 @media (pointer: fine) {
+  .pointer,
   .reboot button,
-  .reboot a {
+  .reboot a,
+  .reboot select {
     cursor: pointer;
   }
 }
@@ -288,6 +290,7 @@ form: transform:$1;
 d: display:$1;
 pe: pointer-events:$1;
 pos: position:$1;
+ta: text-align:$1;
 
 gap: grid-gap:$1;
 g-area: grid-area:$1;
@@ -308,7 +311,7 @@ ai: align-items:$1;
 as: align-self:$1;
 
 bg: background:$1;
-bgm: background-image:$1;
+bgm: background-image:url('$1') background-repeat:no-repeat background-position:center|center background-size:cover;
 gradient: background-image:linear-gradient($1,$2,$3);
 text-gradient: -webkit-background-clip:text gradient:$1,$2,$3 color:rgba(0,0,0,0);
 
@@ -363,9 +366,8 @@ c: color:$1;
 shadow: box-shadow:$1;
 r: border-radius:$1;
 ol: outline:$1;
-of: overflow:$1 -webkit-overflow-scrolling:touch;
-of-x: overflow-x:$1 -webkit-overflow-scrolling:touch;
-of-y: overflow-y:$1 -webkit-overflow-scrolling:touch;
+ox: overflow-x:$1 -webkit-overflow-scrolling:touch;
+oy: overflow-y:$1 -webkit-overflow-scrolling:touch;
 `;
 
   const flavorEle = document.createElement("mark");

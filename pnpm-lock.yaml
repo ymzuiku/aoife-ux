@@ -1,31 +1,128 @@
 dependencies:
+  aoife-route: 0.2.3
   nano-storage: 1.0.2
   template-css: 1.5.6
   vanilla-message: 1.1.3
 devDependencies:
   '@types/body-scroll-lock': 2.6.1
-  aoife: 1.7.6
+  aoife: 1.7.7
   body-scroll-lock: 3.1.5
+  flavorcss: 0.5.18
   tslib: 2.1.0
   typescript: 4.2.3
+  vite: 2.2.1
 lockfileVersion: 5.2
 packages:
   /@types/body-scroll-lock/2.6.1:
     dev: true
     resolution:
       integrity: sha512-PPFm/2A6LfKmSpvMg58gHtSqwwMChbcKKGhSCRIhY4MyFzhY8moAN6HrTCpOeZQUqkFdTFfMqr7njeqGLKt72Q==
-  /aoife/1.7.6:
+  /aoife-route/0.2.3:
+    dependencies:
+      querystring-number: 1.0.8
+    dev: false
+    resolution:
+      integrity: sha512-pVje0v5nkLtAaC6O5JJ3ehRqjNFnlfxRCTQElRu8+ThYmDTLLGhSuIbAhPd2KojiX0H0Heu0N1rEl+tWdLTZwA==
+  /aoife/1.7.7:
     dev: true
     resolution:
-      integrity: sha512-wuhmOczYRkAZs+Cnitb0TvoxviiK4V5cmQbOaPUsLSs/5MqllcVlSD8Vu/L8ChuXfvVcZr2dQi1xJBWHpEvRQw==
+      integrity: sha512-ni5d41Vh9uo9J/FDxdZFFY17m95D34bxEO1WRcDhcPaVQFLIpsXnFmPahLhUBt8Y0ITjVrcBStCFP0o8W3M/Vg==
   /body-scroll-lock/3.1.5:
     dev: true
     resolution:
       integrity: sha512-Yi1Xaml0EvNA0OYWxXiYNqY24AfWkbA6w5vxE7GWxtKfzIbZM+Qw+aSmkgsbWzbHiy/RCSkUZBplVxTA+E4jJg==
+  /colorette/1.2.2:
+    dev: true
+    resolution:
+      integrity: sha512-MKGMzyfeuutC/ZJ1cba9NqcNpfeqMUcYmyF1ZFY6/Cn7CNSAKx6a+s48sqLqyAiZuaP2TcqMhoo+dlwFnVxT9w==
+  /esbuild/0.9.7:
+    dev: true
+    hasBin: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-VtUf6aQ89VTmMLKrWHYG50uByMF4JQlVysb8dmg6cOgW8JnFCipmz7p+HNBl+RR3LLCuBxFGVauAe2wfnF9bLg==
+  /flavorcss/0.5.18:
+    dev: true
+    resolution:
+      integrity: sha512-ZBvtuQl3ugMUfwrpDeMYfaghpm9PHZ2LjzZWSCIC0+D3rZjZ9RxvaPx5sFumAp+BWkILlqaqIRr9q8muVaw08g==
+  /fsevents/2.3.2:
+    dev: true
+    engines:
+      node: ^8.16.0 || ^10.6.0 || >=11.0.0
+    optional: true
+    os:
+      - darwin
+    resolution:
+      integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
+  /function-bind/1.1.1:
+    dev: true
+    resolution:
+      integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
+  /has/1.0.3:
+    dependencies:
+      function-bind: 1.1.1
+    dev: true
+    engines:
+      node: '>= 0.4.0'
+    resolution:
+      integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
+  /is-core-module/2.2.0:
+    dependencies:
+      has: 1.0.3
+    dev: true
+    resolution:
+      integrity: sha512-XRAfAdyyY5F5cOXn7hYQDqh2Xmii+DEfIcQGxK/uNwMHhIkPWO0g8msXcbzLe+MpGoR951MlqM/2iIlU4vKDdQ==
   /nano-storage/1.0.2:
     dev: false
     resolution:
       integrity: sha512-pt36QLLEo3+oyXiEAtXZFqrky+8t4rdgRh6Nn0rqsUosDPWZcxDqmYXzL9h/PM3uZLgo4MgKfXdLhy7Gk0GvcQ==
+  /nanoid/3.1.22:
+    dev: true
+    engines:
+      node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1
+    hasBin: true
+    resolution:
+      integrity: sha512-/2ZUaJX2ANuLtTvqTlgqBQNJoQO398KyJgZloL0PZkC0dpysjncRUPsFe3DUPzz/y3h+u7C46np8RMuvF3jsSQ==
+  /path-parse/1.0.6:
+    dev: true
+    resolution:
+      integrity: sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
+  /postcss/8.2.10:
+    dependencies:
+      colorette: 1.2.2
+      nanoid: 3.1.22
+      source-map: 0.6.1
+    dev: true
+    engines:
+      node: ^10 || ^12 || >=14
+    resolution:
+      integrity: sha512-b/h7CPV7QEdrqIxtAf2j31U5ef05uBDuvoXv6L51Q4rcS1jdlXAVKJv+atCFdUXYl9dyTHGyoMzIepwowRJjFw==
+  /querystring-number/1.0.8:
+    dev: false
+    resolution:
+      integrity: sha512-2aoUEkmBizS9Zcx1Rf9tIm42Uifw4WtvankOak+1fewWXWs8tJO09vsa1bDID3QIl1L+T6BoPxIJBqGf6JRK0w==
+  /resolve/1.20.0:
+    dependencies:
+      is-core-module: 2.2.0
+      path-parse: 1.0.6
+    dev: true
+    resolution:
+      integrity: sha512-wENBPt4ySzg4ybFQW2TT1zMQucPK95HSh/nq2CFTZVOGut2+pQvSsgtda4d26YrYcr067wjbmzOG8byDPBX63A==
+  /rollup/2.45.2:
+    dev: true
+    engines:
+      node: '>=10.0.0'
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+    resolution:
+      integrity: sha512-kRRU7wXzFHUzBIv0GfoFFIN3m9oteY4uAsKllIpQDId5cfnkWF2J130l+27dzDju0E6MScKiV0ZM5Bw8m4blYQ==
+  /source-map/0.6.1:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
   /template-css/1.5.6:
     dependencies:
       template-fn: 1.0.2
@@ -51,12 +148,29 @@ packages:
     dev: false
     resolution:
       integrity: sha512-kNC2laQQSh186mtr6as6d1Co2mU00z8mxPQiD74Y55qoI6N5kb3PYw42C9iteylihkr4Uw1yR0U15YMi/26VGw==
+  /vite/2.2.1:
+    dependencies:
+      esbuild: 0.9.7
+      postcss: 8.2.10
+      resolve: 1.20.0
+      rollup: 2.45.2
+    dev: true
+    engines:
+      node: '>=12.0.0'
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+    resolution:
+      integrity: sha512-KIqK90EoJJpuqE86Y9DSkZjFNGgsyZX/4I1xENIitLRd3hgRtOlIGCJYrNnBD9/eqipz0OroAiIj9/R1JcOdFA==
 specifiers:
   '@types/body-scroll-lock': ^2.6.1
-  aoife: ^1.7.3
+  aoife: ^1.7.7
+  aoife-route: ^0.2.3
   body-scroll-lock: ^3.1.5
+  flavorcss: ^0.5.18
   nano-storage: ^1.0.2
   template-css: ^1.5.6
   tslib: ^2.1.0
   typescript: ^4.2.3
   vanilla-message: ^1.1.3
+  vite: ^2.2.1

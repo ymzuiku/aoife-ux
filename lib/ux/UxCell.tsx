@@ -2,22 +2,19 @@ export interface UxCellProps extends IProps {
   topCell?: boolean;
 }
 
-const cellBox = `
-cols:1fr|auto
-padding:10px|10px
-bg:--plan
-bb:--divide
-t:0.2s|all|--ease
-md:cursor:pointer
-:active:bg:--active
-`;
-
 export function UxCell({ topCell, className, children, ...rest }: UxCellProps) {
+  const sty = `
+  g-cols:1fr|auto
+p:--a1
+bg:--bg
+bb-px:--gray-deep
+time:0.2s|all|--ease
+pointer
+:active:bg:--active-weak
+  `;
+
   return (
-    <div
-      class={[topCell && "bt:--divide bt:20px", cellBox, className]}
-      {...rest}
-    >
+    <div class={[topCell && "bt-px:--gray-deep", sty, className]} {...rest}>
       <div>{children}</div>
       <div class="align-self:center opacity:0.3">
         <svg
