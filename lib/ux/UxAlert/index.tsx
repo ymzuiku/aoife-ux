@@ -106,6 +106,9 @@ css`
       background: var(--gray);
     }
   }
+  .ux-alert-btn:active {
+    background: var(--gray);
+  }
   .ux-alert-btn-cancel {
     color: var(--label-deep) !important;
   }

@@ -1,13 +1,14 @@
 dependencies:
-  aoife-route: 0.2.3
+  aoife: 1.7.7
+  aoife-route: 0.2.7
+  flavorcss: 0.6.5
+  flavorcss-base: 0.6.3
   nano-storage: 1.0.2
   template-css: 1.5.6
   vanilla-message: 1.1.3
 devDependencies:
   '@types/body-scroll-lock': 2.6.1
-  aoife: 1.7.7
   body-scroll-lock: 3.1.5
-  flavorcss: 0.5.18
   tslib: 2.1.0
   typescript: 4.2.3
   vite: 2.2.1
@@ -17,14 +18,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-PPFm/2A6LfKmSpvMg58gHtSqwwMChbcKKGhSCRIhY4MyFzhY8moAN6HrTCpOeZQUqkFdTFfMqr7njeqGLKt72Q==
-  /aoife-route/0.2.3:
+  /aoife-route/0.2.7:
     dependencies:
       querystring-number: 1.0.8
     dev: false
     resolution:
-      integrity: sha512-pVje0v5nkLtAaC6O5JJ3ehRqjNFnlfxRCTQElRu8+ThYmDTLLGhSuIbAhPd2KojiX0H0Heu0N1rEl+tWdLTZwA==
+      integrity: sha512-N6qA/ADhmWfy75N2lIvTMrcO9vi5e+eSIDyGwa/omDKFfLQEDzNiBh6NtSC5deaLkZ7YBhimHSCwAl3n2cwzSw==
   /aoife/1.7.7:
-    dev: true
+    dev: false
     resolution:
       integrity: sha512-ni5d41Vh9uo9J/FDxdZFFY17m95D34bxEO1WRcDhcPaVQFLIpsXnFmPahLhUBt8Y0ITjVrcBStCFP0o8W3M/Vg==
   /body-scroll-lock/3.1.5:
@@ -41,10 +42,14 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-VtUf6aQ89VTmMLKrWHYG50uByMF4JQlVysb8dmg6cOgW8JnFCipmz7p+HNBl+RR3LLCuBxFGVauAe2wfnF9bLg==
-  /flavorcss/0.5.18:
-    dev: true
+  /flavorcss-base/0.6.3:
+    dev: false
     resolution:
-      integrity: sha512-ZBvtuQl3ugMUfwrpDeMYfaghpm9PHZ2LjzZWSCIC0+D3rZjZ9RxvaPx5sFumAp+BWkILlqaqIRr9q8muVaw08g==
+      integrity: sha512-Rv2ur1dYw1TZ+4P4BCDU7P/Qt+88ZaTPxKMPlKknchNgPQ2VyUusPOEG+8k/3P7+rZoKGJ4JtTItWnKgrFJ/zw==
+  /flavorcss/0.6.5:
+    dev: false
+    resolution:
+      integrity: sha512-BhJDlVpI6YUMMzHqPGbM+IGivy6h0L5D2Jw3XhMhx5NUnz8Da2w1SqUrz8ZyRPRoHUu69o02d4l5ISrz3csm4g==
   /fsevents/2.3.2:
     dev: true
     engines:
@@ -165,9 +170,10 @@ packages:
 specifiers:
   '@types/body-scroll-lock': ^2.6.1
   aoife: ^1.7.7
-  aoife-route: ^0.2.3
+  aoife-route: ^0.2.7
   body-scroll-lock: ^3.1.5
-  flavorcss: ^0.5.18
+  flavorcss: ^0.6.5
+  flavorcss-base: ^0.6.3
   nano-storage: ^1.0.2
   template-css: ^1.5.6
   tslib: ^2.1.0

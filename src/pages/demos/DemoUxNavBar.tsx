@@ -1,3 +1,10 @@
+import { UxNavBar } from "../../../lib";
+import { DemoView } from "./DemeView";
+
 export default () => {
-  return <div>DemoUxNavBar</div>;
+  return (
+    <DemoView>
+      <UxNavBar backLabel="back" />
+    </DemoView>
+  );
 };

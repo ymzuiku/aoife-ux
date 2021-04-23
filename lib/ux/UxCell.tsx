@@ -1,8 +1,15 @@
 export interface UxCellProps extends IProps {
   topCell?: boolean;
+  selected?: boolean;
 }
 
-export function UxCell({ topCell, className, children, ...rest }: UxCellProps) {
+export function UxCell({
+  selected,
+  topCell,
+  className,
+  children,
+  ...rest
+}: UxCellProps) {
   const sty = `
   g-cols:1fr|auto
 p:--a1
@@ -14,7 +21,15 @@ pointer
   `;
 
   return (
-    <div class={[topCell && "bt-px:--gray-deep", sty, className]} {...rest}>
+    <div
+      class={[
+        topCell && "bt-px:--gray-deep",
+        selected && "bl:1px|solid|--primary",
+        sty,
+        className,
+      ]}
+      {...rest}
+    >
       <div>{children}</div>
       <div class="align-self:center opacity:0.3">
         <svg

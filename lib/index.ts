@@ -1,3 +1,8 @@
+import "aoife";
+import "flavorcss";
+import "flavorcss-base";
+import { setMobileNotScale } from "./setMobiles";
+
 export * from "./ux/UxButton";
 export * from "./ux/UxApp";
 export * from "./ux/UxSelect";
@@ -17,12 +22,5 @@ export * from "./ux/UxInputCodes";
 export * from "./tools";
 export * from "./ux/UxNavBar";
 export * from "./ux/UxBackButton";
-import * as device from "./device";
-import { setMobileNotScale } from "./setMobiles";
-import { useBaseFlavor } from "./useBaseFlavor";
 
-// setMobileScroll();
 setMobileNotScale();
-useBaseFlavor();
-
-export { device };

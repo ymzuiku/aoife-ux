@@ -1,4 +1,6 @@
-import { isPc } from "./device";
+import { flavorcss } from "flavorcss";
+
+const isPc = flavorcss.os.desktop;
 // import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 // export const setMobileScroll = () => {
@@ -57,38 +59,38 @@ export const setMobileNotScale = () => {
   });
 };
 
-export const setKeyboardAutoHide = () => {
-  if (isPc || (window as any).__setKeyboardAutoHide) {
-    return;
-  }
+// export const setKeyboardAutoHide = () => {
+//   if (isPc || (window as any).__setKeyboardAutoHide) {
+//     return;
+//   }
 
-  (window as any).__setKeyboardAutoHide = true;
-  // 处理ios移动端键盘自动收起，并且回到页面滚动位置
-  let bodyScrollTop = 0;
-  let windowScrollTop = 0;
-  let keyboardFocusInput: any;
-  let keyboardTimer = null as any;
-  const bindBlurKeyboard = (e: any) => {
-    if (keyboardFocusInput && keyboardFocusInput.blur) {
-      keyboardFocusInput.blur();
-    }
-  };
+//   (window as any).__setKeyboardAutoHide = true;
+//   // 处理ios移动端键盘自动收起，并且回到页面滚动位置
+//   let bodyScrollTop = 0;
+//   let windowScrollTop = 0;
+//   let keyboardFocusInput: any;
+//   let keyboardTimer = null as any;
+//   const bindBlurKeyboard = (e: any) => {
+//     if (keyboardFocusInput && keyboardFocusInput.blur) {
+//       keyboardFocusInput.blur();
+//     }
+//   };
 
-  document.body.addEventListener("focusin", (e: any) => {
-    if (keyboardTimer) {
-      clearTimeout(keyboardTimer);
-      keyboardTimer = null;
-    }
-    // 软键盘弹起事件
-    keyboardFocusInput = e.target;
+//   document.body.addEventListener("focusin", (e: any) => {
+//     if (keyboardTimer) {
+//       clearTimeout(keyboardTimer);
+//       keyboardTimer = null;
+//     }
+//     // 软键盘弹起事件
+//     keyboardFocusInput = e.target;
 
-    keyboardTimer = setTimeout(() => {
-      document.body.addEventListener("click", bindBlurKeyboard);
-    }, 60);
-  });
-  document.body.addEventListener("focusout", () => {
-    // 软键盘关闭事件
-    keyboardFocusInput = void 0;
-    document.body.removeEventListener("click", bindBlurKeyboard);
-  });
-};
+//     keyboardTimer = setTimeout(() => {
+//       document.body.addEventListener("click", bindBlurKeyboard);
+//     }, 60);
+//   });
+//   document.body.addEventListener("focusout", () => {
+//     // 软键盘关闭事件
+//     keyboardFocusInput = void 0;
+//     document.body.removeEventListener("click", bindBlurKeyboard);
+//   });
+// };
