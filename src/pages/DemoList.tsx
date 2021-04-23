@@ -3,6 +3,18 @@ import { UxCell } from "../../lib";
 
 export const demoData = [
   {
+    title: "Svg Icon list",
+    info: "普通 button",
+    url: "/demos/DemoUxButton",
+    render: () => import("./demos/DemoUxButton"),
+  },
+  {
+    title: "UxButton",
+    info: "普通 button",
+    url: "/demos/DemoUxButton",
+    render: () => import("./demos/DemoUxButton"),
+  },
+  {
     title: "UxCell",
     info: "用在列表中的行",
     url: "/demos/DemoUxCell",

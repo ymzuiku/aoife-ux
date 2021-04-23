@@ -1,11 +1,11 @@
 import { UxNavBar } from "../../../lib";
 import { demoData } from "../DemoList";
 
-export const DemoView = ({ title, children }: IProps) => {
+export const DemoView = ({ title, children, ...rest }: IProps) => {
   const p = location.pathname;
   const item = demoData.find((item) => item.url === p);
   const out = (
-    <div class="s:100%">
+    <div class="s:100%" {...rest}>
       <UxNavBar onlyMobile />
       <div class="p:--a2">
         <h2 class="mb:--a2">{item.title} Example:</h2>

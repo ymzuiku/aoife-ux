@@ -103,11 +103,11 @@ css`
   }
   @media (pointer: fine) {
     .ux-alert-btn:hover {
-      background: var(--gray);
+      background: var(--active-weak);
     }
   }
   .ux-alert-btn:active {
-    background: var(--gray);
+    background: var(--active);
   }
   .ux-alert-btn-cancel {
     color: var(--label-deep) !important;
