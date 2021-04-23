@@ -3,10 +3,22 @@ import { UxCell } from "../../lib";
 
 export const demoData = [
   {
-    title: "Svg Icon list",
-    info: "普通 button",
-    url: "/demos/DemoUxButton",
-    render: () => import("./demos/DemoUxButton"),
+    title: "UxSelect",
+    info: "UxSelect 使用系统默认的 Select",
+    url: "/demos/DemoUxSelect",
+    render: () => import("./demos/DemoUxSelect"),
+  },
+  {
+    title: "UxMessage",
+    info: "UxMessage 提示一个消息",
+    url: "/demos/DemoUxMessage",
+    render: () => import("./demos/DemoUxMessage"),
+  },
+  {
+    title: "Svg Icon",
+    info: "Svg Icon 样式例子",
+    url: "/demos/DemoIcon",
+    render: () => import("./demos/DemoIcon"),
   },
   {
     title: "UxButton",

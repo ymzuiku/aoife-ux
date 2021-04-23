@@ -1,0 +1,17 @@
+{
+  "appId": "com.aoife_ux.com",
+  "appName": "android",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "server": {
+    "url":"https://aoife-ux.writeflowy.com",
+    "url2":"http://127.0.0.1:3000/"
+  },
+  "cordova": {}
+}

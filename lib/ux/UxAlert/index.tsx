@@ -94,10 +94,10 @@ css`
   .ux-alert-btn {
     font-weight: 500;
     font-size: 14px;
-    border-left: 1px solid var(--line);
-    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--disable-weak);
+    border-top: 1px solid var(--disable-weak);
     text-align: center;
-    padding: 14px;
+    padding: var(--a2, 16px);
     cursor: pointer;
     color: var(--primary);
   }
@@ -113,18 +113,19 @@ css`
     color: var(--label-deep) !important;
   }
   .ux-alert-form {
-    width: 350px;
+    width: 80vw;
+    max-width: 500px;
     background: var(--bg);
     border-radius: var(--r);
-    box-shadow: 0px 4px 10px var(--shadow-deep);
+    box-shadow: 0px 4px 10px var(--black-10);
     overflow: hidden;
   }
-  @media (min-width: 640px) {
+  /* @media (max-width: 640px) {
     .ux-alert-form {
       width: 70vw;
       max-width: 1024px;
     }
-  }
+  } */
   .ux-alert-title {
     font-size: 16px;
     font-weight: 500;

@@ -17,7 +17,7 @@ const sty = `
   g-cols:1fr|auto
 p:--a1
 bg:--bg
-bb-px:--gray-deep
+bb-px:--disable-weak
 tt:0.2s|all|--ease
 pointer
 :hover:bg:--active-weak

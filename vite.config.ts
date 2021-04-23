@@ -7,8 +7,8 @@ export default defineConfig({
       "vscode",
       "aoife",
       "aoife-ux",
-      "flavorcss",
       "flavorcss-base",
+      "flavorcss",
     ],
   },
   esbuild: {

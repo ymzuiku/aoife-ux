@@ -55,6 +55,12 @@ const moveInList = {
   },
 };
 
+const setStyle = (obj: HTMLElement, sty: any) => {
+  Object.keys(sty).forEach((k) => {
+    (obj as any).style[k] = sty[k];
+  });
+};
+
 export function _Model(
   {
     getClose,
@@ -76,21 +82,22 @@ export function _Model(
   const moveIn = moveInList[direction] as any;
 
   setTimeout(() => {
-    <MaskEl style={{ background: "var(--mask-deep)" }}></MaskEl>;
-    <Content style={{ ...moveIn }}></Content>;
+    MaskEl.style.background = "var(--black-50)";
+    setStyle(Content, moveIn);
   });
 
   const close = () => {
-    <MaskEl style={{ background: "var(--alpha)" }}></MaskEl>;
+    MaskEl.style.background = "var(--black-0)";
+
     if (direction === "center") {
-      <Content style={{ ...moveOut, opacity: 0 }}></Content>;
+      setStyle(Content, { ...moveOut, opacity: 0 });
     } else {
-      <Content style={{ ...moveOut, opacity: 1 }}></Content>;
+      setStyle(Content, { ...moveOut, opacity: 1 });
     }
 
     setTimeout(() => {
-      <MaskEl style={{ pointerEvents: "none" }}></MaskEl>;
-      <Content style={{ pointerEvents: "none" }}></Content>;
+      setStyle(MaskEl, { pointerEvents: "none" });
+      setStyle(Content, { pointerEvents: "none" });
     }, animeTime / 2);
 
     setTimeout(() => {
@@ -121,9 +128,9 @@ export function _Model(
         position: "fixed",
         top: "0px",
         left: "0px",
-        background: "var(--alpha)",
+        background: "var(--black-0)",
         pointerEvents: mask ? void 0 : "none",
-        zIndex: 100,
+        zIndex: 1100,
         overflow: "hidden",
       }}
       onclick={() => {
