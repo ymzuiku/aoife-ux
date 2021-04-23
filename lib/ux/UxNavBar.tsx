@@ -21,7 +21,7 @@ export const UxNavBar = ({
       class={["p-safe-top", onlyMobile && "d:black sm:d:none", className]}
       {...rest}
     >
-      <nav class="px:--a1 h:--a5 bg:--light f-row ai:center shadow:0|3px|6px|--black-5 safe-top">
+      <nav class="px:--a1 h:--a5 bg:--light f-row ai:center bs:0|3px|6px|--black-5 safe-top">
         <div>{left || <UxBackButton label={backLabel} />}</div>
         <div class="flex:1 ta:center">{title}</div>
         <div>{right}</div>

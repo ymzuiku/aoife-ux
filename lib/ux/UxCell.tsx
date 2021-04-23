@@ -15,7 +15,7 @@ export function UxCell({
 p:--a1
 bg:--bg
 bb-px:--gray-deep
-time:0.2s|all|--ease
+tt:0.2s|all|--ease
 pointer
 :active:bg:--active-weak
   `;
