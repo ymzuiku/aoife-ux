@@ -2,7 +2,7 @@ dependencies:
   aoife: 1.7.8
   aoife-route: 0.2.7
   flavorcss: 0.6.5
-  flavorcss-base: 0.6.7
+  flavorcss-base: link:../../../../node_global/pnpm-global/node_modules/flavorcss-base
   nano-storage: 1.0.2
   template-css: 1.5.6
   vanilla-message: 1.1.4
@@ -175,10 +175,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-OrGi0qYsi/tDGgyUy3l6L84nyWI=
-  /flavorcss-base/0.6.7:
-    dev: false
-    resolution:
-      integrity: sha512-N9Cze23OpP4tvIB5iGIubi4qzv6LZ0f0MQ3gUXhY2A/N5xcHTJAdoUiBpsXgSuuq1mkWYdxKgELoJhN39vQ/ZQ==
   /flavorcss/0.6.5:
     dev: false
     resolution:

@@ -3,6 +3,37 @@ import { UxCell } from "../../lib";
 
 export const demoData = [
   {
+    title: "UxColorsPreview",
+    info:
+      "默认的 css-value 颜色，可以在开发中覆盖，定制主题；aoife-ux没有使用列表之外的颜色。",
+    url: "/demos/DemoUxColorPreview",
+    render: () => import("./demos/DemoUxColorPreview"),
+  },
+  {
+    title: "UxInputCodes",
+    info: "用于输入多个number的input，多用于输入验证码",
+    url: "/demos/DemoUxInputCodes",
+    render: () => import("./demos/DemoUxInputCodes"),
+  },
+  {
+    title: "UxInputWeak",
+    info: "弱化描边的 input",
+    url: "/demos/DemoUxInputWeak",
+    render: () => import("./demos/DemoUxInputWeak"),
+  },
+  {
+    title: "UxInputTip",
+    info: "保留 placeholder 作为提示的 input",
+    url: "/demos/DemoUxInputTip",
+    render: () => import("./demos/DemoUxInputTip"),
+  },
+  {
+    title: "UxInputOutline",
+    info: "带描边的 input",
+    url: "/demos/DemoUxInputOutline",
+    render: () => import("./demos/DemoUxInputOutline"),
+  },
+  {
     title: "UxSelect",
     info: "UxSelect 使用系统默认的 Select",
     url: "/demos/DemoUxSelect",
@@ -64,9 +95,9 @@ export default () => {
             }}
             topCell={i === 0}
           >
-            <div>
-              <div class="fs:1em c:--text-deep">{item.title}</div>
-              <div class="fs:0.8em c:--label">{item.info}</div>
+            <div class="g-row gap:--a1">
+              <div class="fs:1.3em c:--title">{item.title}</div>
+              <div class="fs:0.9em c:--label">{item.info}</div>
             </div>
           </UxCell>
         );

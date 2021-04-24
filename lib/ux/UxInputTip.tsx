@@ -43,12 +43,11 @@ export function UxInputTip({
 
 css`
   .ux-input {
-    height: var(--h);
     font-family: var(--sans);
     position: relative;
     transition: 0.2s all ease-out;
     border-radius: var(--r);
-    border: 1px solid var(--line);
+    border: 1px solid var(--disable-weak);
     display: grid;
     grid-template-columns: 1fr auto;
   }
@@ -57,22 +56,19 @@ css`
       border: 1px solid var(--primary);
     }
   }
-  .ux-input:focus-within {
-    border: 1px solid var(--primary);
-    box-shadow: 0px 0px 0px 2px var(--primary);
-  }
   .ux-input > .ux-input__label {
     color: var(--label);
     transform-origin: left;
     transition: 0.17s all ease-out;
-    position: block;
     position: absolute;
     left: 15px;
     top: 16px;
     pointer-events: none;
   }
-  .ux-input > input {
-    background: rgba(0, 0, 0, 0);
+
+  .ux-input:focus-within {
+    border: 1px solid var(--primary);
+    box-shadow: 0px 0px 0px 3px var(--active);
   }
   .ux-input:focus-within > .ux-input__label,
   .ux-input > .js-have-text {

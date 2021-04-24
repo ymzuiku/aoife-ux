@@ -94,7 +94,6 @@ css`
   .ux-alert-btn {
     font-weight: 500;
     font-size: 14px;
-    border-left: 1px solid var(--disable-weak);
     border-top: 1px solid var(--disable-weak);
     text-align: center;
     padding: var(--a2, 16px);
@@ -102,6 +101,9 @@ css`
     color: var(--primary);
   }
   @media (pointer: fine) {
+    .ux-alert-btn {
+      border-left: 1px solid var(--disable-weak);
+    }
     .ux-alert-btn:hover {
       background: var(--active-weak);
     }

@@ -14,7 +14,8 @@ fill="currentColor"
 </svg>`;
 
 const sty = `
-  g-cols:1fr|auto
+g-cols:1fr|auto
+gap:--a1
 p:--a1
 bg:--bg
 bb-px:--disable-weak

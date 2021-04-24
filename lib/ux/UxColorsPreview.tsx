@@ -1,4 +1,4 @@
-export const UxColorsDebug = () => {
+export const UxColorsPreview = () => {
   const colors = `
   --bg-weak
   --bg
@@ -79,7 +79,7 @@ export const UxColorsDebug = () => {
                 return (
                   <div class="m:--a1 g-row pi:center grid-gap:--a1">
                     <div
-                      class={`bg:${c} wh:100px r:--r b:1px|solid|rgba(0,0,0,0.01) as:center`}
+                      class={`bg:${c} s:100px r:--r b:4px|solid|--black-10 as:center`}
                     ></div>
                     <p class="bg:--bg c:--text ta:center">{c}</p>
                   </div>
@@ -95,7 +95,7 @@ export const UxColorsDebug = () => {
           return (
             <div class="m:--a1 g-row pi:center grid-gap:--a1">
               <div
-                class={`bg:${c} wh:100px r:--r b:1px|solid|rgba(0,0,0,0.01) as:center`}
+                class={`bg:${c} s:100px r:--r b:4px|solid|--black-10 as:center`}
               ></div>
               <p class="bg:--bg c:--title-deep ta:center bg:--black-0">{c}</p>
             </div>
