@@ -3,6 +3,12 @@ import { UxCell } from "../../lib";
 
 export const demoData = [
   {
+    title: "UxSwipe",
+    info: "应用切换菜单",
+    url: "/demos/DemoUxSwipe",
+    render: () => import("./demos/DemoUxSwipe"),
+  },
+  {
     title: "UxAppTabs",
     info: "应用切换菜单",
     url: "/demos/DemoUxAppTabs",

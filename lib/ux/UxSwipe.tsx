@@ -7,14 +7,19 @@ export interface SwipeData {
 }
 
 export interface UxSwipeProps extends IProps {
-  onChange?: (data: SwipeData) => any;
+  atChange?: (data: SwipeData) => any;
 }
 
 export interface UxSwipeElement extends HTMLDivElement {
   moveTo: (num: number) => void;
 }
 
-export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
+export function UxSwipe({
+  atChange,
+  children,
+  className,
+  ...rest
+}: UxSwipeProps): UxSwipeElement {
   let lastX = 0;
   let x = 0;
   let w = -1;
@@ -23,9 +28,9 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
   let len = children!.length;
   let lock = false;
   const out = (
-    <div class={`h:300px col w:100% will-change:transform`}>
+    <div class={() => [`f-row will-change:transform`, className]} {...rest}>
       {children!.map((v) => {
-        return <div class="w:100% h:100%">{v}</div>;
+        return <div class="h:100% f:0|0|100%">{v}</div>;
       })}
     </div>
   ) as UxSwipeElement;
@@ -34,7 +39,10 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
     lock = true;
   });
 
-  out.addEventListener("touchstart", (e) => {
+  let isTouchStart = false;
+
+  const touchstart = (e: any, isTouch?: boolean) => {
+    isTouchStart = true;
     if (w < 0) {
       const ele = out.children.item(0) as HTMLDivElement;
       if (ele) {
@@ -44,20 +52,26 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
     }
     lock = false;
     t = Date.now();
-    lastX = e.touches[0].clientX;
+    lastX = isTouch ? e.touches[0].clientX : e.clientX;
     out.style.transition = "0.2s transform var(--ease)";
-    // e.preventDefault();
     e.stopPropagation();
-  });
+  };
 
-  out.addEventListener("touchmove", (e) => {
-    x = e.touches[0].clientX - lastX;
+  out.addEventListener("touchstart", (e) => touchstart(e, true));
+  out.addEventListener("mousedown", (e) => touchstart(e, false));
+
+  const touchmove = (e: any, isTouch?: boolean) => {
+    if (!isTouchStart) {
+      return;
+    }
+    const _x = isTouch ? e.touches[0].clientX : e.clientX;
+    x = _x - lastX;
     if (lock) {
       if (x !== 0) {
         x = 0;
         out.style.transform = `translateX(${num * w + x}px)`;
-        if (onChange) {
-          onChange({
+        if (atChange) {
+          atChange({
             moveX: x,
             containerWidth: w,
             nowNum: num,
@@ -73,8 +87,8 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
     }
     out.style.transform = `translateX(${num * w + x}px)`;
 
-    if (onChange) {
-      onChange({
+    if (atChange) {
+      atChange({
         moveX: x,
         containerWidth: w,
         nowNum: num,
@@ -84,9 +98,13 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
     }
 
     e.stopPropagation();
-  });
+  };
 
-  out.addEventListener("touchend", (e) => {
+  out.addEventListener("touchmove", (e) => touchmove(e, true));
+  out.addEventListener("mousemove", (e) => touchmove(e, false));
+
+  const touchend = (e: any, isTouch?: boolean) => {
+    isTouchStart = false;
     if (lock) {
       return;
     }
@@ -116,8 +134,8 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
       out.style.transform = `translateX(${num * w}px)`;
     }, 30);
 
-    if (onChange) {
-      onChange({
+    if (atChange) {
+      atChange({
         moveX: x,
         containerWidth: w,
         nowNum: num,
@@ -125,7 +143,11 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
         kind: "touch",
       });
     }
-  });
+  };
+
+  out.addEventListener("touchend", (e) => touchend(e, true));
+  out.addEventListener("mouseup", (e) => touchend(e, false));
+  out.addEventListener("mouseout", (e) => touchend(e, false));
 
   out.moveTo = (index: number) => {
     if (document.contains(out)) {
@@ -136,8 +158,8 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
         out.style.transform = `translateX(${num * w}px)`;
       }, 30);
 
-      if (onChange) {
-        onChange({
+      if (atChange) {
+        atChange({
           moveX: x,
           containerWidth: w,
           nowNum: num,
@@ -148,5 +170,5 @@ export function UxSwipe({ onChange, children }: UxSwipeProps): UxSwipeElement {
     }
   };
 
-  return out as UxSwipeElement;
+  return (<div class="s:100% overflow:hidden">{out}</div>) as UxSwipeElement;
 }

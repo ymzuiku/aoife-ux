@@ -12,7 +12,7 @@ export default () => {
     <DemoView ref={(e: any) => (out = e)}>
       <h1>{() => state.num}</h1>
       <UxInputCodes
-        oninput={(e) => {
+        atInput={(e) => {
           state.num = e;
           aoife.next(out);
         }}

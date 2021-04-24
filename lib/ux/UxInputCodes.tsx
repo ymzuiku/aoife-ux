@@ -1,5 +1,5 @@
 interface UxInputCodes extends IProps {
-  oninput?: (text: any) => any;
+  atInput?: (text: string) => any;
   disabled?: boolean;
   len?: number;
   onlyNumber?: boolean;
@@ -13,7 +13,7 @@ export const UxInputCodes = ({
   disabled = false,
   onlyNumber = true,
   className,
-  oninput,
+  atInput,
   ...rest
 }: UxInputCodes) => {
   const handleLoadCode = () => {
@@ -67,8 +67,8 @@ export const UxInputCodes = ({
             }
 
             let text = handleLoadCode();
-            if (oninput) {
-              setTimeout(() => oninput(text));
+            if (atInput) {
+              setTimeout(() => atInput(text));
             }
           }}
           maxLength={1}
