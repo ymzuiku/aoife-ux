@@ -9,7 +9,7 @@ interface UxSendCodeProps extends IProps {
   onSend?: (event: IInputEvnet) => Promise<boolean>;
 }
 
-export function UxSendCode({
+export function UxInputSendCode({
   localKey = "ux-send-code",
   onSend,
   waitTime = 10,
@@ -19,16 +19,19 @@ export function UxSendCode({
 }: UxSendCodeProps) {
   const local = NanoStorage(localKey, { now: 0 }, { version });
   const isWaiting = () => {
-    return local.now > Date.now();
+    return local.now + waitTime * 1000 > Date.now();
   };
   const getTime = () => {
-    return ~~((local.now - Date.now()) / 1000);
+    return ~~((local.now + waitTime * 1000 - Date.now()) / 1000);
   };
+  let timer: any;
   // 计算倒计时
   const resetTime = () => {
-    local.set({ now: local.now - 1000 });
     if (isWaiting()) {
-      setTimeout(resetTime, 1000);
+      if (timer) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(resetTime, 1000);
     } else {
       local.reinit();
     }
@@ -50,7 +53,7 @@ export function UxSendCode({
     if (input) {
       input.focus();
     }
-    local.set({ now: waitTime * 1000 + Date.now() });
+    local.set({ now: Date.now() });
     resetTime();
   };
   const button = (
@@ -72,10 +75,7 @@ export function UxSendCode({
   }
 
   const out = (
-    <UxInputTip {...rest}>
-      {children![0]}
-      {button}
-    </UxInputTip>
+    <UxInputTip right={button} {...rest}></UxInputTip>
   ) as HTMLElement;
   return out;
 }
@@ -94,15 +94,15 @@ css`
   .ux-send-code * {
     cursor: pointer;
   }
-  .ux-send-code.js-loading {
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--light);
-    background: var(--line);
-  }
   @media (pointer: fine) {
     .ux-send-code:hover {
       background: var(--primary-deep);
     }
+  }
+  .ux-send-code.js-loading {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--light);
+    background: var(--disable);
   }
 `;

@@ -1,4 +1,4 @@
-import { UxAppTabProps, UxAppTab } from "./UxAppTab";
+import { UxAppTabProps, UxAppTabs } from "./UxAppTabs";
 import { getRender } from "../getRender";
 
 export interface UxAppProps extends UxAppTabProps {}
@@ -41,7 +41,7 @@ export function UxApp({ children, className, data }: UxAppProps) {
     <div>
       {page}
       <div class="w:1px h:100px"></div>
-      <UxAppTab
+      <UxAppTabs
         class="pos:fixed bottom:0px left:0px"
         data={data}
         onChange={(i) => {

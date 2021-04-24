@@ -14,13 +14,14 @@ export interface AppTabItemInstans {
 
 export interface UxAppTabProps extends IProps {
   data: AppTabItem[];
-  onChange?: (num: number) => void;
+  onchange?: (num: any) => void;
 }
 
-export function UxAppTab({
+export function UxAppTabs({
   data,
-  onChange,
+  onchange,
   className,
+  children,
   ...rest
 }: UxAppTabProps) {
   const state = {
@@ -38,7 +39,7 @@ export function UxAppTab({
   const out = (
     <div
       class={[
-        "pt:5px pb:--safe-bottom w:100% col bt:--divide bg:--plan",
+        "pt:5px p-safe-bottom w:100% g-col pi:center bt:--divide bg:--plan",
         className,
       ]}
       {...rest}
@@ -58,22 +59,29 @@ export function UxAppTab({
             class={() => {
               const isSelect = i === state.selectedNum;
               return [
-                "row place-content:center",
+                "g-row pc:center pointer",
                 isSelect ? "--app-tab:--primary" : "--app-tab:--weak",
               ];
             }}
             onclick={() => {
               state.selectedNum = i;
-              onChange && onChange(i);
+              onchange && onchange(i);
               aoife.next(out);
             }}
           >
-            <div class="color:--app-tab place-self:center">
+            <div class="c:--disable place-self:center">
               {() =>
                 i === state.selectedNum ? item.selectedElement : item.element
               }
             </div>
-            <p class="fs:10px color:--app-tab">{item.label}</p>
+            <p
+              class={() => [
+                "fs:10px sm:fs:13px ta:center",
+                i === state.selectedNum ? "c:--primary-deep" : "c:--disable",
+              ]}
+            >
+              {item.label}
+            </p>
           </div>
         );
       })}

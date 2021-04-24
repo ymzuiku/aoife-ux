@@ -11,7 +11,7 @@ if (flavorcss.os.desktop) {
 export const Pages = () => {
   return (
     <div class="s:100% sm:g-cols:300px|1fr">
-      <div class="d:none sm:d:block br-px:--gray-deep">
+      <div class="d:none sm:d:block br-px:--gray-deep oy:auto h:100%">
         <DemoList />
       </div>
       <div>

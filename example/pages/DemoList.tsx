@@ -3,6 +3,19 @@ import { UxCell } from "../../lib";
 
 export const demoData = [
   {
+    title: "UxAppTabs",
+    info: "应用切换菜单",
+    url: "/demos/DemoUxAppTabs",
+    render: () => import("./demos/DemoUxAppTabs"),
+  },
+  {
+    title: "UxInputSendCode",
+    info:
+      "默认的 css-value 颜色，可以在开发中覆盖，定制主题；aoife-ux没有使用列表之外的颜色。",
+    url: "/demos/DemoUxInputSendCode",
+    render: () => import("./demos/DemoUxInputSendCode"),
+  },
+  {
     title: "UxColorsPreview",
     info:
       "默认的 css-value 颜色，可以在开发中覆盖，定制主题；aoife-ux没有使用列表之外的颜色。",
@@ -96,7 +109,7 @@ export default () => {
             topCell={i === 0}
           >
             <div class="g-row gap:--a1">
-              <div class="fs:1.3em c:--title">{item.title}</div>
+              <div class="fs:1.3em c:--title-deep">{item.title}</div>
               <div class="fs:0.9em c:--label">{item.info}</div>
             </div>
           </UxCell>

@@ -5,7 +5,6 @@ interface UxInputTipProps extends IProps {
 }
 
 export function UxInputTip({
-  children,
   oninput,
   className,
   placeholder,
@@ -61,8 +60,8 @@ css`
     transform-origin: left;
     transition: 0.17s all ease-out;
     position: absolute;
-    left: 15px;
-    top: 16px;
+    left: var(--a1);
+    top: calc(var(--a1) * 1.75);
     pointer-events: none;
   }
 
@@ -72,10 +71,10 @@ css`
   }
   .ux-input:focus-within > .ux-input__label,
   .ux-input > .js-have-text {
-    transform: translate(0, -13px) scale(0.78);
+    transform: translate(0, calc(var(--a1) * -1.5)) scale(0.8);
   }
   .ux-input > .ux-input__input {
-    padding: 26px 15px 9px 15px;
+    padding: calc(var(--a1) * 2.5) var(--a1) var(--a1) var(--a1);
     background: rgba(0, 0, 0, 0);
     width: 100%;
     outline: none;
