@@ -115,8 +115,8 @@ export default () => {
             topCell={i === 0}
           >
             <div class="g-row gap:--a1">
-              <div class="fs:1.3em c:--title-deep">{item.title}</div>
-              <div class="fs:0.9em c:--label">{item.info}</div>
+              <div class="fs:1em c:--title-deep">{item.title}</div>
+              <div class="fs:0.8em c:--label">{item.info}</div>
             </div>
           </UxCell>
         );

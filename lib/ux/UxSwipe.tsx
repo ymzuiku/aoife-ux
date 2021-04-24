@@ -7,7 +7,7 @@ export interface SwipeData {
 }
 
 export interface UxSwipeProps extends IProps {
-  atChange?: (data: SwipeData) => any;
+  atChange?: (index: number, data: SwipeData) => any;
 }
 
 export interface UxSwipeElement extends HTMLDivElement {
@@ -71,10 +71,10 @@ export function UxSwipe({
         x = 0;
         out.style.transform = `translateX(${num * w + x}px)`;
         if (atChange) {
-          atChange({
+          atChange(-num, {
             moveX: x,
             containerWidth: w,
-            nowNum: num,
+            nowNum: -num,
             length: len,
             kind: "touch",
           });
@@ -88,10 +88,10 @@ export function UxSwipe({
     out.style.transform = `translateX(${num * w + x}px)`;
 
     if (atChange) {
-      atChange({
+      atChange(-num, {
         moveX: x,
         containerWidth: w,
-        nowNum: num,
+        nowNum: -num,
         length: len,
         kind: "touch",
       });
@@ -135,10 +135,10 @@ export function UxSwipe({
     }, 30);
 
     if (atChange) {
-      atChange({
+      atChange(-num, {
         moveX: x,
         containerWidth: w,
-        nowNum: num,
+        nowNum: -num,
         length: len,
         kind: "touch",
       });
@@ -159,10 +159,10 @@ export function UxSwipe({
       }, 30);
 
       if (atChange) {
-        atChange({
+        atChange(-num, {
           moveX: x,
           containerWidth: w,
-          nowNum: num,
+          nowNum: -num,
           length: len,
           kind: "event",
         });

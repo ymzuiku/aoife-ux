@@ -70,37 +70,42 @@ export const UxColorsPreview = () => {
 
   return (
     <section scroll-y class="oy:auto">
-      {["light", "dark"].map((theme) => {
-        return (
-          <div class={theme}>
-            <div class="bg:--bg g-cols:repeat(6,auto) p:40px">
-              <h2 class="c:--title-deep">{theme}</h2>
-              {colors.map((c) => {
-                return (
-                  <div class="m:--a1 g-row pi:center grid-gap:--a1">
-                    <div
-                      class={`bg:${c} s:100px r:--r b:4px|solid|--black-10 as:center`}
-                    ></div>
-                    <p class="bg:--bg c:--text ta:center">{c}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
-      <div class="bg:#888 g-cols:repeat(6,auto) p:40px">
-        <h2>White And Black</h2>
-        {alpha.map((c) => {
+      <div class="g-col">
+        {["light", "dark"].map((theme) => {
           return (
-            <div class="m:--a1 g-row pi:center grid-gap:--a1">
-              <div
-                class={`bg:${c} s:100px r:--r b:4px|solid|--black-10 as:center`}
-              ></div>
-              <p class="bg:--bg c:--title-deep ta:center bg:--black-0">{c}</p>
+            <div class={theme}>
+              <div class="bg:--bg g-row p:--a4 r:--r">
+                <h2 class="c:--title-deep">{theme}</h2>
+                {colors.map((c) => {
+                  return (
+                    <div class="m:--a1 g-row pi:center grid-gap:--a1">
+                      <div
+                        class={`bg:${c} s:60px r:--r b:4px|solid|--black-10 as:center`}
+                      ></div>
+                      <p class="bg:--bg c:--text ta:center">{c}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           );
         })}
+      </div>
+      <h2 class="p:--a3">White And Black</h2>
+      <p>黑白色各20个透明度阶梯，不随dark变化，一般用在投影，遮罩等区域</p>
+      <div class="bg:#888 r:--r g-row">
+        <div class="g-row">
+          {alpha.map((c) => {
+            return (
+              <div class="m:--a1 g-col pi:center grid-gap:--a1">
+                <div
+                  class={`bg:${c} s:60px r:--r b:4px|solid|--black-10 as:center`}
+                ></div>
+                <p class="bg:--bg c:--title-deep ta:center bg:--black-0">{c}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

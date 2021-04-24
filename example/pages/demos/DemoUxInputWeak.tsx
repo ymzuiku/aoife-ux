@@ -12,6 +12,7 @@ export default () => {
     <DemoView ref={(e: any) => (out = e)}>
       <h1>{() => state.num}</h1>
       <UxInputWeak
+        placeholder="请输入"
         oninput={(e) => {
           state.num = e.target.value;
           aoife.next(out);

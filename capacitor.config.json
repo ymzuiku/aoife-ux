@@ -10,7 +10,7 @@
     }
   },
   "server": {
-    "url":"https://aoife-ux.writeflowy.com",
+    "url":"https://aoife-ux.writeflowy.com?native=1",
     "url2":"http://127.0.0.1:3000/"
   },
   "cordova": {}
