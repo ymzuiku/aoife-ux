@@ -21,8 +21,8 @@
     "jsx": "preserve",
     "jsxFactory": "aoife",
     "jsxFragmentFactory": "aoife.Frag",
-    "outDir": "./es",
+    "outDir": "./es"
   },
-  "exclude": ["node_modules","umd", "es"],
-  "include": ["lib"]
+  "exclude": ["node_modules", "umd", "es"],
+  "include": ["lib", "example"]
 }
