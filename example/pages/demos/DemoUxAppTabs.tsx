@@ -17,23 +17,23 @@ const task = `<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmln
 const data = [
   {
     label: "首页",
-    element: () => <i class="fs:20px c:--disable" innerHTML={userIcon}></i>,
+    element: () => <i class="fs:24px c:--disable" innerHTML={userIcon}></i>,
     selectedElement: () => (
-      <i class="fs:20px c:--primary-deep" innerHTML={userIcon}></i>
+      <i class="fs:24px c:--primary-deep" innerHTML={userIcon}></i>
     ),
   },
   {
     label: "模块",
-    element: () => <i class="fs:20px c:--disable" innerHTML={bag}></i>,
+    element: () => <i class="fs:24px c:--disable" innerHTML={bag}></i>,
     selectedElement: () => (
-      <i class="fs:20px c:--primary-deep" innerHTML={bag}></i>
+      <i class="fs:24px c:--primary-deep" innerHTML={bag}></i>
     ),
   },
   {
     label: "任务",
-    element: () => <i class="fs:20px c:--disable" innerHTML={task}></i>,
+    element: () => <i class="fs:24px c:--disable" innerHTML={task}></i>,
     selectedElement: () => (
-      <i class="fs:20px c:--primary-deep" innerHTML={task}></i>
+      <i class="fs:24px c:--primary-deep" innerHTML={task}></i>
     ),
   },
 ];
