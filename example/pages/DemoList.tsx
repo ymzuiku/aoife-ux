@@ -104,7 +104,7 @@ export const demoData = [
 
 export default () => {
   return (
-    <div>
+    <div class="s:100% oy:auto">
       <h2 class="fs:30px p:--a2">Aoife UX Example</h2>
       {demoData.map((item, i) => {
         return (

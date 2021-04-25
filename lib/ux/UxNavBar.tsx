@@ -18,7 +18,7 @@ export const UxNavBar = ({
 }: NavBarProps) => {
   return (
     <div
-      class={["p-safe-top", onlyMobile && "d:black sm:d:none", className]}
+      class={["p-safe-top z:100", onlyMobile && "d:black sm:d:none", className]}
       {...rest}
     >
       <nav class="px:--a1 h:--a5 bg:--light f-row ai:center bs:0|2px|6px|--black-5">

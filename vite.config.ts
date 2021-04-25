@@ -2,7 +2,14 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   optimizeDeps: {
-    exclude: ["monaco-editor", "vscode", "aoife", "aoife-ux", "flavorcss-base"],
+    exclude: [
+      "monaco-editor",
+      "vscode",
+      "aoife",
+      "aoife-ux",
+      "aoife-route",
+      "flavorcss-base",
+    ],
   },
   esbuild: {
     jsxFactory: "aoife",

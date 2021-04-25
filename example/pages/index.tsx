@@ -10,16 +10,25 @@ if (flavorcss.os.desktop) {
 
 export const Pages = () => {
   return (
-    <div class="s:100% sm:g-cols:300px|1fr">
-      <div class="d:none sm:d:block br-px:--gray-deep oy:auto h:100%">
+    <div class="s:100% o:hidden sm:g-cols:300px|1fr">
+      <div class="d:none sm:d:block br-px:--gray-deep s:100% oy:auto">
         <DemoList />
       </div>
-      <div>
-        <div class="s:100% d:block sm:d:none">
-          <Route url="/" render={DemoList}></Route>
-        </div>
+      <div class="dog s:100%">
+        <Route
+          url="/"
+          keep
+          render={() => {
+            return (
+              <div class="s:100% d:block sm:d:none">
+                <DemoList />
+              </div>
+            );
+          }}
+        ></Route>
+
         {demoData.map((item) => {
-          return <Route url={item.url} render={item.render}></Route>;
+          return <Route keep url={item.url} render={item.render}></Route>;
         })}
       </div>
     </div>

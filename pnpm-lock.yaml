@@ -2,9 +2,9 @@ dependencies:
   '@capacitor/android': 2.4.7_@capacitor+core@3.0.0-rc.0
   '@capacitor/ios': 2.4.7_@capacitor+core@3.0.0-rc.0
   aoife: 1.7.8
-  aoife-route: 0.2.7
+  aoife-route: 0.2.8
   flavorcss: 0.6.5
-  flavorcss-base: 0.6.9
+  flavorcss-base: link:../../../../node_global/pnpm-global/node_modules/flavorcss-base
   nano-storage: 1.0.2
   template-css: 1.5.6
   vanilla-message: 1.1.4
@@ -172,12 +172,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==
-  /aoife-route/0.2.7:
+  /aoife-route/0.2.8:
     dependencies:
       querystring-number: 1.0.8
     dev: false
     resolution:
-      integrity: sha512-N6qA/ADhmWfy75N2lIvTMrcO9vi5e+eSIDyGwa/omDKFfLQEDzNiBh6NtSC5deaLkZ7YBhimHSCwAl3n2cwzSw==
+      integrity: sha512-/anQytLriAI+DDMqZWGoyQyHrkNm0pdigL4UfVUtk641BPXIBVGPML36Fdb45QCulo6mLyNPDN1dxetZlLKBRg==
   /aoife/1.7.8:
     dev: false
     resolution:
@@ -301,10 +301,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-JcfInLH5B3+IkbvmHY85Dq4lbx4=
-  /flavorcss-base/0.6.9:
-    dev: false
-    resolution:
-      integrity: sha512-1A6lPbMQJ7nj837cll6D8oreG+UvosvlNAuZeHkwfgRZhZ9ZK8rz7C66zEhx0faPuQo0oz7dVI7jcioP6Q/fOQ==
   /flavorcss/0.6.5:
     dev: false
     resolution:
@@ -796,7 +792,7 @@ specifiers:
   '@capacitor/ios': 2.4.7
   '@types/body-scroll-lock': ^2.6.1
   aoife: ^1.7.8
-  aoife-route: ^0.2.7
+  aoife-route: ^0.2.8
   body-scroll-lock: ^3.1.5
   flavorcss: ^0.6.5
   flavorcss-base: ^0.6.9
