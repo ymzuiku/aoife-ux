@@ -76,7 +76,7 @@ export function _Model(
   ...child: any[]
 ) {
   const pos = positionList[direction];
-  const MaskEl = <div class={["ux-model", pos]}></div>;
+  const MaskEl = <div class={["ux-model", pos].join(' ')}></div>;
   const Content = <div />;
   const moveOut = moveOutList[direction] as any;
   const moveIn = moveInList[direction] as any;

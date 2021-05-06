@@ -41,7 +41,7 @@ export function UxAppTabs({
       class={[
         "pt:5px p-safe-bottom w:100% g-col pi:center bt:--divide bg:--plan",
         className,
-      ]}
+      ].join(' ')}
       {...rest}
     >
       {items.map((item, i) => {
@@ -61,7 +61,7 @@ export function UxAppTabs({
               return [
                 "g-row pc:center pointer",
                 isSelect ? "--app-tab:--primary" : "--app-tab:--weak",
-              ];
+              ].join(' ');
             }}
             onclick={() => {
               state.selectedNum = i;
@@ -78,7 +78,7 @@ export function UxAppTabs({
               class={() => [
                 "fs:10px sm:fs:13px ta:center",
                 i === state.selectedNum ? "c:--primary-deep" : "c:--disable",
-              ]}
+              ].join(' ')}
             >
               {item.label}
             </p>

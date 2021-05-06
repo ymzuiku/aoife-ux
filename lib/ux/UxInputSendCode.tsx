@@ -6,7 +6,7 @@ interface UxSendCodeProps extends IProps {
   localKey?: string;
   waitTime?: number;
   /* 返回 bool，用于判断是否开始倒计时 */
-  onSend?: (event: IInputEvnet) => Promise<boolean>;
+  onSend?: (event: Event) => Promise<boolean>;
 }
 
 export function UxInputSendCode({
@@ -38,7 +38,7 @@ export function UxInputSendCode({
     aoife.next(button);
   };
 
-  const _onSend = async (e: IInputEvnet) => {
+  const _onSend = async (e: Event) => {
     // 倒计时结束之前不可点击
     if (isWaiting()) {
       return;
@@ -62,16 +62,14 @@ export function UxInputSendCode({
       tabIndex={1}
       debounce="onclick"
       onclick={_onSend}
-      class={() => ["ux-send-code", isWaiting() && "js-loading"]}
+      class={() => ["ux-send-code", isWaiting() && "js-loading"].join(' ')}
     >
       {() => (isWaiting() ? getTime() : children![1] || "发送验证码")}
     </button>
   );
 
   if (isWaiting()) {
-    aoife.waitAppend(button).then(() => {
-      resetTime();
-    });
+    aoife(button, {onAppend: resetTime});
   }
 
   const out = (

@@ -14,7 +14,7 @@ interface IAlertProps extends IModel {
 function _Button(children: any, onclick: any, events: any, isCancel?: boolean) {
   return (
     <div
-      class={["ux-alert-btn", isCancel && "ux-alert-btn-cancel"]}
+      class={["ux-alert-btn", isCancel && "ux-alert-btn-cancel"].join(' ')}
       onclick={() => {
         if (onclick) {
           onclick(events.close);
@@ -49,7 +49,7 @@ function AlertElement({
       <div class="ux-alert-btns">
         {ok &&
           aoife(_Button([ok], onok, events), {
-            style: { borderBotton: "1px solid var(--gray-300)" },
+            style: { borderBottom: "1px solid var(--gray-300)", background:'#ff' },
           })}
         {_Button([cancel], oncancel, events, true)}
       </div>

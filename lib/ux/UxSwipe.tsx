@@ -28,7 +28,7 @@ export function UxSwipe({
   let len = children!.length;
   let lock = false;
   const out = (
-    <div class={() => [`f-row will-change:transform`, className]} {...rest}>
+    <div class={() => [`f-row will-change:transform`, className].join(' ')} {...rest}>
       {children!.map((v) => {
         return <div class="h:100% f:0|0|100%">{v}</div>;
       })}

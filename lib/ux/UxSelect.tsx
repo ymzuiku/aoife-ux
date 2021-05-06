@@ -5,7 +5,7 @@ const sty =
 
 export function UxSelect({ children, className, ...rest }: IProps) {
   return (
-    <div class={[sty, className]} {...rest}>
+    <div class={[sty, className].join(' ')} {...rest}>
       <select class="bg:--black-0 ol:none" {...rest}>
         {children}
       </select>

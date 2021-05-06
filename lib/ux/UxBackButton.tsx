@@ -16,8 +16,8 @@ export const UxBackButton = ({
       class={[
         "pr:6px pointer f-row ai:center :active:bg:--gray r:--r",
         className,
-      ]}
-      onclick={(e) => {
+      ].join(' ')}
+      onclick={(e:any) => {
         if (onclick) {
           onclick(e);
         } else {
@@ -26,7 +26,7 @@ export const UxBackButton = ({
       }}
       {...rest}
     >
-      <i class={["s:36px g-col pc:center fs:20px"]} innerHTML={back()}></i>
+      <i class={"s:36px g-col pc:center fs:20px"} innerHTML={back()}></i>
       <span>{label}</span>
     </div>
   );

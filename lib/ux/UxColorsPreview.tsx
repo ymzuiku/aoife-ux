@@ -92,7 +92,7 @@ export const UxColorsPreview = () => {
         })}
       </div>
       <h2 class="p:--a3">White And Black</h2>
-      <p class="p:--">
+      <p class="p:--a1">
         黑白色各20个透明度阶梯，不随dark变化，一般用在投影，遮罩等区域
       </p>
       <div class="bg:#888 r:--r g-row">

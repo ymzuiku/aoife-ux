@@ -26,9 +26,9 @@ export function UxInputTip({
   const input = <input class="ux-input__input" oninput={_oninput} {...rest} />;
 
   const out = (
-    <div class={["ux-input", className as string]} style={style}>
+    <div class={["ux-input", className as string].join(' ')} style={style}>
       <label
-        class={() => ["ux-input__label", state.haveText && "js-have-text"]}
+        class={() => ["ux-input__label", state.haveText && "js-have-text"].join(' ')}
       >
         {placeholder || "Please input"}
       </label>

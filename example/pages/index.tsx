@@ -28,7 +28,7 @@ export const Pages = () => {
         ></Route>
 
         {demoData.map((item) => {
-          return <Route keep url={item.url} render={item.render}></Route>;
+          return <Route url={item.url} render={item.render}></Route>;
         })}
       </div>
     </div>

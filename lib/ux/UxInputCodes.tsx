@@ -76,15 +76,15 @@ export const UxInputCodes = ({
         ></input>
       );
       if (i === 0) {
-        aoife.waitAppend(input).then(() => {
+        aoife(input, {onAppend: ()=>{
           input.focus();
-        });
+        }})
       }
       return input;
     });
 
   const out = (
-    <div class={["f-row", className]} {...rest}>
+    <div class={["f-row", className].join(' ')} {...rest}>
       {simInputs}
     </div>
   );

@@ -39,7 +39,7 @@ export function UxCell({
         selected && "bl:1px|solid|--primary",
         sty,
         className,
-      ]}
+      ].join(' ')}
       {...rest}
     >
       <div>{children}</div>
