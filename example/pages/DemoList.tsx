@@ -1,4 +1,4 @@
-import Route from "aoife-route";
+import {Route} from "vanilla-route";
 import { UxCell } from "../../lib";
 
 export const demoData = [

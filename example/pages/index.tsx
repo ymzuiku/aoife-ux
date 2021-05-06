@@ -1,4 +1,4 @@
-import Route from "aoife-route";
+import {Route} from "vanilla-route";
 import { flavorcss } from "flavorcss";
 import DemoList, { demoData } from "./DemoList";
 

@@ -7,7 +7,7 @@ export default defineConfig({
       "vscode",
       "aoife",
       "aoife-ux",
-      "aoife-route",
+      "vanilla-route",
       "flavorcss-base",
     ],
   },
