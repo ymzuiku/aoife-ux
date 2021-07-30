@@ -1,5 +1,6 @@
-import {Route} from "vanilla-route";
+import { Route } from "vanilla-route";
 import { UxCell } from "../../lib";
+import { UxCellWeak } from "../../lib/ux/UxCellWeak";
 
 export const demoData = [
   {
@@ -16,15 +17,13 @@ export const demoData = [
   },
   {
     title: "UxInputSendCode",
-    info:
-      "默认的 css-value 颜色，可以在开发中覆盖，定制主题；aoife-ux没有使用列表之外的颜色。",
+    info: "默认的 css-value 颜色，可以在开发中覆盖，定制主题；aoife-ux没有使用列表之外的颜色。",
     url: "/demos/DemoUxInputSendCode",
     render: () => import("./demos/DemoUxInputSendCode"),
   },
   {
     title: "UxColorsPreview",
-    info:
-      "默认的 css-value 颜色，可以在开发中覆盖，定制主题；aoife-ux没有使用列表之外的颜色。",
+    info: "默认的 css-value 颜色，可以在开发中覆盖，定制主题；aoife-ux没有使用列表之外的颜色。",
     url: "/demos/DemoUxColorPreview",
     render: () => import("./demos/DemoUxColorPreview"),
   },
@@ -108,7 +107,7 @@ export default () => {
       <h2 class="fs:30px p:--a2">Aoife UX Example</h2>
       {demoData.map((item, i) => {
         return (
-          <UxCell
+          <UxCellWeak
             onclick={() => {
               Route.push(item.url);
             }}
@@ -118,7 +117,7 @@ export default () => {
               <div class="fs:1em c:--title-deep">{item.title}</div>
               <div class="fs:0.8em c:--label">{item.info}</div>
             </div>
-          </UxCell>
+          </UxCellWeak>
         );
       })}
     </div>

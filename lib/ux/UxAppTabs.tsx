@@ -14,12 +14,12 @@ export interface AppTabItemInstans {
 
 export interface UxAppTabProps extends IProps {
   data: AppTabItem[];
-  atChange?: (num: number) => void;
+  onChange?: (num: number) => void;
 }
 
 export function UxAppTabs({
   data,
-  atChange,
+  onChange,
   className,
   children,
   ...rest
@@ -65,7 +65,7 @@ export function UxAppTabs({
             }}
             onclick={() => {
               state.selectedNum = i;
-              atChange && atChange(i);
+              onChange && onChange(i);
               aoife.next(out);
             }}
           >

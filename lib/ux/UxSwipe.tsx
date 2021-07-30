@@ -7,7 +7,7 @@ export interface SwipeData {
 }
 
 export interface UxSwipeProps extends IProps {
-  atChange?: (index: number, data: SwipeData) => any;
+  onChange?: (index: number, data: SwipeData) => any;
 }
 
 export interface UxSwipeElement extends HTMLDivElement {
@@ -15,7 +15,7 @@ export interface UxSwipeElement extends HTMLDivElement {
 }
 
 export function UxSwipe({
-  atChange,
+  onChange,
   children,
   className,
   ...rest
@@ -28,7 +28,10 @@ export function UxSwipe({
   let len = children!.length;
   let lock = false;
   const out = (
-    <div class={() => [`f-row will-change:transform`, className].join(' ')} {...rest}>
+    <div
+      class={() => [`f-row will-change:transform`, className].join(" ")}
+      {...rest}
+    >
       {children!.map((v) => {
         return <div class="h:100% f:0|0|100%">{v}</div>;
       })}
@@ -70,8 +73,8 @@ export function UxSwipe({
       if (x !== 0) {
         x = 0;
         out.style.transform = `translateX(${num * w + x}px)`;
-        if (atChange) {
-          atChange(-num, {
+        if (onChange) {
+          onChange(-num, {
             moveX: x,
             containerWidth: w,
             nowNum: -num,
@@ -87,8 +90,8 @@ export function UxSwipe({
     }
     out.style.transform = `translateX(${num * w + x}px)`;
 
-    if (atChange) {
-      atChange(-num, {
+    if (onChange) {
+      onChange(-num, {
         moveX: x,
         containerWidth: w,
         nowNum: -num,
@@ -134,8 +137,8 @@ export function UxSwipe({
       out.style.transform = `translateX(${num * w}px)`;
     }, 30);
 
-    if (atChange) {
-      atChange(-num, {
+    if (onChange) {
+      onChange(-num, {
         moveX: x,
         containerWidth: w,
         nowNum: -num,
@@ -158,8 +161,8 @@ export function UxSwipe({
         out.style.transform = `translateX(${num * w}px)`;
       }, 30);
 
-      if (atChange) {
-        atChange(-num, {
+      if (onChange) {
+        onChange(-num, {
           moveX: x,
           containerWidth: w,
           nowNum: -num,

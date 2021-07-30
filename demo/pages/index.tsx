@@ -1,17 +1,17 @@
-import {Route} from "vanilla-route";
+import { Route } from "vanilla-route";
 import { flavorcss } from "flavorcss";
 import DemoList, { demoData } from "./DemoList";
 
 if (flavorcss.os.desktop) {
-  setTimeout(() => {
-    Route.push(demoData[0].url);
-  });
+  // setTimeout(() => {
+  //   Route.push(demoData[0].url);
+  // });
 }
 
 export const Pages = () => {
   return (
     <div class="s:100% o:hidden sm:g-cols:300px|1fr">
-      <div class="d:none sm:d:block br-px:--gray-deep s:100% oy:auto">
+      <div class="d:none sm:d:block br-px:--gray-deep s:100% oy:auto h:100vh">
         <DemoList />
       </div>
       <div class="dog s:100%">

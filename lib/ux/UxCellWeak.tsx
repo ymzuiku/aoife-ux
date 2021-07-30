@@ -16,9 +16,10 @@ fill="currentColor"
 const sty = `
 g-cols:1fr|auto
 gap:--a1
-p:--a1
-bg:--bg
-bb-px:--disable-weak
+padding:--a2
+bg:--bg-weak
+m:--a1
+border-radius:--a1
 ts:0.2s|all|--ease
 pointer
 :hover:bg:--active-weak
@@ -27,19 +28,13 @@ pointer
 
 export function UxCellWeak({
   selected,
-  topCell,
   className,
   children,
   ...rest
 }: UxCellProps) {
   return (
     <div
-      class={[
-        topCell && "bt-px:--gray-deep",
-        selected && "bl:1px|solid|--primary",
-        sty,
-        className,
-      ].join(" ")}
+      class={[selected && "bl:1px|solid|--primary", sty, className].join(" ")}
       {...rest}
     >
       <div>{children}</div>

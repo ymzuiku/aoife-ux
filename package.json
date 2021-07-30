@@ -6,7 +6,6 @@
   "module": "./es/index.js",
   "scripts": {
     "dev": "vite",
-    "cap": "cap",
     "build": "vite build"
   },
   "exports": {
@@ -32,8 +31,6 @@
   },
   "homepage": "git+https://github.com/ymzuiku/aoife-route.git",
   "dependencies": {
-    "@capacitor/android": "2.4.7",
-    "@capacitor/ios": "2.4.7",
     "aoife": "^2.0.4",
     "flavorcss": "^0.6.5",
     "flavorcss-base": "^0.6.14",

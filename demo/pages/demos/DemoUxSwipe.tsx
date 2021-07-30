@@ -3,7 +3,7 @@ import { DemoView } from "./DemeView";
 
 export default () => {
   const state = {
-    item: "",
+    item: "0",
   };
   const h2 = <h2>{() => state.item}</h2>;
   return (
@@ -12,7 +12,7 @@ export default () => {
       <div class="b-px:gray-deep">
         <UxSwipe
           class="h:300px >*:br-px:--gray >*:g-col >*:s:100% >*>*:g-col >*>*:pc:center"
-          atChange={(item) => {
+          onChange={(item) => {
             state.item = JSON.stringify(item);
             aoife.next(h2);
           }}
