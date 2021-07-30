@@ -1,12 +1,10 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@capacitor/android': 2.4.7
   '@capacitor/cli': ^3.0.0-rc.0
   '@capacitor/core': ^3.0.0-rc.0
-  '@capacitor/ios': 2.4.7
   '@types/body-scroll-lock': ^2.6.1
-  aoife: ^2.0.4
+  aoife: ^2.0.7
   body-scroll-lock: ^3.1.5
   flavorcss: ^0.6.5
   flavorcss-base: ^0.6.14
@@ -15,13 +13,11 @@ specifiers:
   tslib: ^2.1.0
   typescript: ^4.2.3
   vanilla-message: ^1.1.4
-  vanilla-route: ^1.0.3
+  vanilla-route: ^1.0.5
   vite: ^2.2.1
 
 dependencies:
-  '@capacitor/android': 2.4.7_@capacitor+core@3.0.0-rc.0
-  '@capacitor/ios': 2.4.7_@capacitor+core@3.0.0-rc.0
-  aoife: link:../aoife-group/aoife
+  aoife: 2.0.7
   flavorcss: 0.6.5
   flavorcss-base: 0.6.14
   nano-storage: 1.0.2
@@ -35,18 +31,10 @@ devDependencies:
   body-scroll-lock: 3.1.5
   tslib: 2.1.0
   typescript: 4.2.3
-  vanilla-route: link:../vanilla-route
+  vanilla-route: 1.0.5
   vite: 2.2.1
 
 packages:
-
-  /@capacitor/android/2.4.7_@capacitor+core@3.0.0-rc.0:
-    resolution: {integrity: sha512-7jcmwheo94dJEOX1z4r3SlZrL+MvESav1xsUwC5ydLFZCpuvBKJ0szbDNWzCAglgpXmW9hC0WdwYBErgDrDPRg==}
-    peerDependencies:
-      '@capacitor/core': ~2.4.0
-    dependencies:
-      '@capacitor/core': 3.0.0-rc.0
-    dev: false
 
   /@capacitor/cli/3.0.0-rc.0:
     resolution: {integrity: sha512-9ZDUZ9PdByF8zVO9bQeuxMMcipiR+JA1foCaFDWBU4mLbhRgGq1UbKmzzY3E6O0sy5gJOCYjk+JPKT2qgy7eeg==}
@@ -78,14 +66,6 @@ packages:
     dependencies:
       tslib: 2.2.0
     dev: true
-
-  /@capacitor/ios/2.4.7_@capacitor+core@3.0.0-rc.0:
-    resolution: {integrity: sha512-XKYU67ZM+yY4/vDJ3ZVfs+phjtWK8TcKwq75fGoxB9PKXuCmMi5bihPuA3Xs/sIFXuozpnaYnspp0eTRJ7bG0w==}
-    peerDependencies:
-      '@capacitor/core': ~2.4.0
-    dependencies:
-      '@capacitor/core': 3.0.0-rc.0
-    dev: false
 
   /@ionic/cli-framework-output/2.2.2:
     resolution: {integrity: sha512-eQYkqIW1/tCwSC6Bd0gjse96U11lDX/ikf3jvsjX7a8z/zwSmGzCHRizb7xogV65Ey+1/zyAZR71cpDRQuFLBQ==}
@@ -200,6 +180,14 @@ packages:
     dependencies:
       color-convert: 2.0.1
     dev: true
+
+  /aoife/2.0.7:
+    resolution: {integrity: sha512-a/2c2YWZ87W3Pv6N94S382NoM7GbsyksPT67TnxLmKMLIi6FAuuVQI4rv9AhsZdnFyw0knXkdWefQNCJskQIVg==}
+    dependencies:
+      vanilla-life: 0.1.7
+      vanilla-ob: 0.3.6
+      vanilla-svg-tags: 0.1.2
+    dev: false
 
   /astral-regex/2.0.0:
     resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==}
@@ -519,6 +507,10 @@ packages:
       sisteransi: 1.0.5
     dev: true
 
+  /querystring-number/1.0.9:
+    resolution: {integrity: sha512-h6mGG0LQExXR9W7bQOiArWFLbzsqxJg5Nr9iKz0GpP6S+CC8o2HFu9vE7MUvV4HpU9W4KBEcbvcAy/QrD6PIWQ==}
+    dev: true
+
   /readable-stream/3.6.0:
     resolution: {integrity: sha512-BViHy7LKeTz4oNnkcLJ+lVSL6vpiFeX6/d3oSH8zCW7UxP2onchk+vTGB143xuFjHS3deTgkKoXXymXqymiIdA==}
     engines: {node: '>= 6'}
@@ -686,8 +678,26 @@ packages:
     resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
     dev: true
 
+  /vanilla-life/0.1.7:
+    resolution: {integrity: sha512-WNS1W8WhS8xDzhbNXoV6yLVBah3PK76tKe3FErnp2FkDt9QhrA8TCRbUn4MsS1kw6Y7ueo71qbmYu7EthxFe4A==}
+    dev: false
+
   /vanilla-message/1.1.4:
     resolution: {integrity: sha512-GJ/KzEfTaoYv8Mx01yh8YlVlph6Eo19ctya1WMMxBju1snjuhIl1b6wgViBZA6oopK3EG5BPYJmaQBy2hPIldA==}
+    dev: false
+
+  /vanilla-ob/0.3.6:
+    resolution: {integrity: sha512-nxP8F1J1ZlDxWbMwUboIlC5H/Jh36afYUrGtoOgE5IGfming9SncXEvvTp7TfCZ2LAw7n9gmgg9F3PPcrvZZRw==}
+    dev: false
+
+  /vanilla-route/1.0.5:
+    resolution: {integrity: sha512-xlBrIypuarmtyeWvdweDp8vHqDFjmI+dJA5UeHBNfbTb4FfWj10wwC/SWBEaVhisO5nFh8MwNVTR1bHDmTY5VA==}
+    dependencies:
+      querystring-number: 1.0.9
+    dev: true
+
+  /vanilla-svg-tags/0.1.2:
+    resolution: {integrity: sha512-RiD+2zaLtHGE9XsakFFxo0vsQUXcDims/5bZvGzb2UXz/pRx7fa8VrCOxhmbrN+biYUazcpefzYwJ1eRB/TiYA==}
     dev: false
 
   /vite/2.2.1:
