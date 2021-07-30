@@ -1,10 +1,11 @@
 {
   "name": "aoife-ux",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "es/index.js",
   "types": "lib/index.ts",
   "module": "./es/index.js",
   "scripts": {
+    "es": "esbuild --define:process.env.NODE_ENV=\\\"production\\\" lib/index.ts --outdir=es --target=es6  --bundle --external:querystring-number --format=esm --minify --splitting",
     "dev": "vite",
     "build": "vite build"
   },
@@ -24,12 +25,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ymzuiku/aoife-route.git"
+    "url": "git+https://github.com/ymzuiku/aoife-ux.git"
   },
   "bugs": {
-    "url": "git+https://github.com/ymzuiku/aoife-route.git"
+    "url": "git+https://github.com/ymzuiku/aoife-ux.git"
   },
-  "homepage": "git+https://github.com/ymzuiku/aoife-route.git",
+  "homepage": "git+https://github.com/ymzuiku/aoife-ux.git",
   "dependencies": {
     "aoife": "^2.0.4",
     "flavorcss": "^0.6.5",
