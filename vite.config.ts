@@ -9,6 +9,7 @@ export default defineConfig({
       "aoife-ux",
       "vanilla-route",
       "flavorcss-base",
+      "querystring-number",
     ],
   },
   esbuild: {

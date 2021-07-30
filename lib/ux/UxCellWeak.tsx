@@ -25,7 +25,7 @@ pointer
 :active:bg:--active
   `;
 
-export function UxCell({
+export function UxCellWeak({
   selected,
   topCell,
   className,
@@ -39,7 +39,7 @@ export function UxCell({
         selected && "bl:1px|solid|--primary",
         sty,
         className,
-      ].join(' ')}
+      ].join(" ")}
       {...rest}
     >
       <div>{children}</div>

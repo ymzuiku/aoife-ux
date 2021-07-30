@@ -3,7 +3,7 @@ const sty = `
   :hover:b-px:--primary-weak
   :focus-within:b-px:--primary 
   b-px:--disable-weak
-  tt:0.2s|all|--ease `;
+  ts:0.2s|all|--ease `;
 
 export function UxInputOutline({ className, ...rest }: IProps) {
   return <input class={[sty, className].join(' ')} {...rest}></input>;
